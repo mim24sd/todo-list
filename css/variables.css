@@ -10,15 +10,12 @@
 
   /* shadow color */
   --primaryShadowColor: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --secondaryShadowColor:rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  --hoverShadowColor: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --secondaryShadowColor:rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  --hoverShadowColor: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   --focusPrimaryShadowColor: rgba(137, 139, 139, 0.3) 0px 0px 0px 3px;
   --focusSecondaryShadowColor:rgba(137, 139, 139, 0.5) 0px 0px 0px 3px;
 
-
-  /* SIZE */
+  /* size */
   --small: 0.5em;
   --medium: 1em;
   --large: 1.2em;
