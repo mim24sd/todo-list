@@ -19,7 +19,7 @@
 
   <body>
 
-    <main class="backgroung-box">
+    <main class="background-box">
 
       <nav class="nav-bar">
         <div class="logo-box">
@@ -93,11 +93,10 @@
           <h2>Add New Task</h2>
 
           <form action="/action_page.php">
-            <label for="title">Title:</label><br />
+            <label for="title">Title:</label>
+            <input class="input" type="text" id="title" name="title" />
 
-            <input class="input" type="text" id="title" name="title" /><br />
-
-            <label for="time">Category:</label><br />
+            <label for="time">Category:</label>
 
             <div class="category-row-box">
               <button type="button" class="category-health">
@@ -146,9 +145,9 @@
               </button>
             </div>
 
-            <label for="time">Time:</label><br />
+            <label for="time">Time:</label>
 
-            <input class="input" type="time" id="time" name="time" /><br />
+            <input class="input" type="time" id="time" name="time" />
             <button
               class="submit-button"
               name="submit-button"

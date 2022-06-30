@@ -3,9 +3,6 @@
 
 .nav-bar {
     background-color: var(--white);
-    width: 15vw;
-    padding: var(--xlarge) var(--medium) 0 var(--medium);
-    margin-right: 1vw;
     display: flex;
     flex-direction: column;
     align-items: center;

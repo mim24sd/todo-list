@@ -9,9 +9,8 @@
 
 body {
   background-image: url(../img/wall.png);
-  height: 97vh;
-  margin: 1.5vh 1vw;
-  width: 98vw;
+  margin: var(--large);
+  justify-items: center;
   font-family: var(--font);
 }
 
@@ -27,22 +26,25 @@ h2 {
 
 /* background */
 
-.backgroung-box {
+.background-box {
   border-radius: var(--small);
-  display: flex;
   justify-content: center;
-  height: 100%;
-}
+  display: grid;
+  grid-template-columns: 17% 82%;
+  grid-template-rows: 94vh;
+  grid-column-gap: var(--large);
+}  
 
 /* main */
 
 .main-box {
   background-color: var(--white);
-  width: 80vw;
-  padding: 4vh 2vw;
-  display: flex;
-  flex-direction: row;
+  padding: var(--large);
   align-items: center;
   border-radius: var(--medium);
   box-shadow: var(--primaryShadowColor);
+  display: grid;
+  grid-template-columns: 62% 36%;
+  grid-column-gap: var(--large);
 }
+

@@ -2,12 +2,25 @@
 @import "./variables.css";
 
 .task-table-box {
-    width: 47.5vw;
     height: 100%;
-    margin-right: 2vw;
     background-color: var(--white);
     border-radius: var(--small);
     box-shadow: var(--primaryShadowColor);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .task-table-box:-webkit-scrollbar-track {
+	  border-radius: var(--small);
+  }
+
+  .task-table-box::-webkit-scrollbar {
+	  width: var(--small);
+  }
+
+  .task-table-box::-webkit-scrollbar-thumb{ 
+	  border-radius: var(--small);
+	  background-color: var(--extraColor);
   }
   
   .table-box {
