@@ -1,0 +1,48 @@
+@import "./normalize.css";
+@import "./variables.css";
+
+@import "./nav.css";
+@import "./addOrEditTask.css";
+@import "./taskTable.css";
+
+/* Shared styles */
+
+body {
+  background-image: url(../img/wall.png);
+  height: 97vh;
+  margin: 1.5vh 1vw;
+  width: 98vw;
+  font-family: var(--font);
+}
+
+button {
+  font-size: medium;
+}
+
+h2 {
+  padding-left: var(--medium);
+}
+
+/* .................................................................... */
+
+/* background */
+
+.backgroung-box {
+  border-radius: var(--small);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+/* main */
+
+.main-box {
+  background-color: var(--white);
+  width: 80vw;
+  padding: 4vh 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: var(--medium);
+  box-shadow: var(--primaryShadowColor);
+}

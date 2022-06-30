@@ -1,0 +1,87 @@
+@import "./normalize.css";
+@import "./variables.css";
+
+.task-table-box {
+    width: 47.5vw;
+    height: 100%;
+    margin-right: 2vw;
+    background-color: var(--white);
+    border-radius: var(--small);
+    box-shadow: var(--primaryShadowColor);
+  }
+  
+  .table-box {
+    margin-top: var(--small);
+    padding: var(--medium);
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .table-row {
+    margin-top: var(--small);
+    border-radius: var(--small);
+    padding: var(--medium);
+    box-shadow: var(--primaryShadowColor);
+  }
+  
+  .table-row:hover {
+    border-radius: var(--small);
+    padding: var(--medium);
+    box-shadow: var(--hoverShadowColor);
+  }
+  
+  th {
+    padding: var(--medium);
+    text-align: left;
+  }
+  
+  .color-tag-header {
+    padding: 0 ;
+  }
+  
+  td:first-child {
+    border-bottom-left-radius: var(--medium);
+    border-top-left-radius: var(--medium);
+  }
+  td:last-child {
+    border-bottom-right-radius: var(--medium);
+    border-top-right-radius: var(--medium);
+  }
+  
+  .color-tag-family {
+    background-color: var(--familyColor);
+    width: var(--small);
+    padding: unset ;
+  }
+  
+  .color-tag-job {
+    background-color: var(--jobColor);
+    width: var(--small);
+    padding: unset ;
+  }
+  
+  .color-tag-health {
+    background-color: var(--healthColor);
+    width: var(--small);
+    padding: unset ;
+  }
+  
+  .task {
+    padding: var(--medium);
+  }
+  
+  .time {
+    padding: var(--medium);
+    width: 90px;
+  }
+  
+  .check-box {
+    width: 40px;
+  }
+  
+  .check {
+    border-radius: var(--medium);
+    border: var(--familyColor);
+  }
