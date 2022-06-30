@@ -1,138 +1,171 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="main.css" />
 
-    <head>
-        <title>ToDo List</title>
-        <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/x-icon" href="./img/black-logo.PNG" />
 
-        <link rel="icon" type="image/x-icon"
-            href="./img/black-logo.PNG">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-        <link rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width" />
 
-        <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+  </head>
 
-        <meta charset=utf-8>
-    </head>
-
-    <body>
-        <div class="backgroung-box">
-            <!-- nav bar -->
-            <div class="nav-bar">
-                <div class="logo-box">
-                    <img class="logo" src="./img/black-logo.PNG" alt="todo
-                        logo" />
-                </div>
-
-                <button type="button" class="nav-bar-button">
-                    <img class="button-icon" src="./img/today-icon.png"
-                        alt="today logo" /> <span>Today</span>
-                </button>
-
-                <button type="button" class="nav-bar-button">
-                    <img class="button-icon" src="./img/category-icon.png"
-                        alt="category logo" /> <span>Category</span>
-                </button>
-
-                <button type="button" class="nav-bar-button">
-                    <img class="button-icon" src="./img/goal-icon.png"
-                        alt="goals logo" /> <span>Goals</span>
-                </button>
-            </div>
-
-            <!-- main  -->
-            <div class="main-box">
-                <!-- task table -->
-                <div class="task-table-box">
-                    <h2>My Task List</h2>
-
-                    <div class="table-box">
-                        <table>
-                            <tr>
-                                <th class="color-tag-header"></th>
-                                <th>Task</th>
-                                <th>Time</th>
-                                <th></th>
-                            </tr>
-
-                            <tr class="table-row">
-                                <td class="color-tag-job"></td>
-                                <td class="task">Maria Anders</td>
-                                <td class="time">10:10 AM</td>
-                                <td class="check-box"><input class="check"
-                                        type="checkbox" id="checkbox-done"
-                                        name="checkbox-done"></td>
-                            </tr>
-
-
-                        </table>
-                    </div>
-                </div>
-
-                <!-- create or edit or delete task -->
-                <div class="new-task-box">
-                    <h2>Add New Task</h2>
-
-                    <form action="/action_page.php">
-                        <label for="title">Title:</label><br>
-
-                        <input class="input" type="text" id="title"
-                            name="title"><br>
-
-                        <label for="time">Category:</label><br>
-
-                        <div class="category-row-box">
-                            <button type="button" class="category-health">
-                                <img class="category-logo"
-                                    src="./img/family-icon.png"
-                                    alt="todo
-                                    logo" />
-                            </button>
-
-                            <button type="button" class="category-family">
-                                <img class="category-logo"
-                                    src="./img/heart-icon.png"
-                                    alt="todo
-                                    logo" />
-                            </button>
-
-                            <button type="button" class="category-job">
-                                <img class="category-logo"
-                                    src="./img/job-icon.png"
-                                    alt="todo
-                                    logo" />
-                            </button>
-
-                            <button type="button" class="category-study">
-                                <img class="category-logo"
-                                    src="./img/study-icon.png"
-                                    alt="todo
-                                    logo" />
-                            </button>
-
-                            <button type="button"
-                                class="category-entertainment">
-                                <img class="category-logo"
-                                    src="./img/entertainment-icon.png"
-                                    alt="todo
-                                    logo" />
-                            </button>
-
-                        </div>
-
-                        <label for="time">Time:</label><br>
-
-                        <input class="input" type="time" id="time" name="time"><br>
-                        <button class="submit-button" name="submit-button"
-                            type="button" value="HTML"><span>Save</span></button>
-                        <button class="delete-button" name="delete-button"
-                            type="button" value="CSS"><span>Delete</span></button>
-                    </form>
-                </div>
-            </div>
+  <body>
+    <div class="backgroung-box">
+      <!-- nav bar -->
+      <div class="nav-bar">
+        <div class="logo-box">
+          <img
+            class="logo"
+            src="./img/black-logo.PNG"
+            alt="todo
+                        logo"
+          />
         </div>
-    </body>
 
+        <button type="button" class="nav-bar-button">
+          <img
+            class="button-icon"
+            src="./img/today-icon.png"
+            alt="today logo"
+          />
+          <span>Today</span>
+        </button>
+
+        <button type="button" class="nav-bar-button">
+          <img
+            class="button-icon"
+            src="./img/category-icon.png"
+            alt="category logo"
+          />
+          <span>Category</span>
+        </button>
+
+        <button type="button" class="nav-bar-button">
+          <img class="button-icon" src="./img/goal-icon.png" alt="goals logo" />
+          <span>Goals</span>
+        </button>
+      </div>
+
+      <!-- main  -->
+      <div class="main-box">
+        <!-- task table -->
+        <div class="task-table-box">
+          <h2>My Task List</h2>
+
+          <div class="table-box">
+            <table>
+              <tr>
+                <th class="color-tag-header"></th>
+                <th>Task</th>
+                <th>Time</th>
+                <th></th>
+              </tr>
+
+              <tr class="table-row">
+                <td class="color-tag-job"></td>
+                <td class="task">Maria Anders</td>
+                <td class="time">10:10 AM</td>
+                <td class="check-box">
+                  <input
+                    class="check"
+                    type="checkbox"
+                    id="checkbox-done"
+                    name="checkbox-done"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- create or edit or delete task -->
+        <div class="new-task-box">
+          <h2>Add New Task</h2>
+
+          <form action="/action_page.php">
+            <label for="title">Title:</label><br />
+
+            <input class="input" type="text" id="title" name="title" /><br />
+
+            <label for="time">Category:</label><br />
+
+            <div class="category-row-box">
+              <button type="button" class="category-health">
+                <img
+                  class="category-logo"
+                  src="./img/family-icon.png"
+                  alt="todo
+                                    logo"
+                />
+              </button>
+
+              <button type="button" class="category-family">
+                <img
+                  class="category-logo"
+                  src="./img/heart-icon.png"
+                  alt="todo
+                                    logo"
+                />
+              </button>
+
+              <button type="button" class="category-job">
+                <img
+                  class="category-logo"
+                  src="./img/job-icon.png"
+                  alt="todo
+                                    logo"
+                />
+              </button>
+
+              <button type="button" class="category-study">
+                <img
+                  class="category-logo"
+                  src="./img/study-icon.png"
+                  alt="todo
+                                    logo"
+                />
+              </button>
+
+              <button type="button" class="category-entertainment">
+                <img
+                  class="category-logo"
+                  src="./img/entertainment-icon.png"
+                  alt="todo
+                                    logo"
+                />
+              </button>
+            </div>
+
+            <label for="time">Time:</label><br />
+
+            <input class="input" type="time" id="time" name="time" /><br />
+            <button
+              class="submit-button"
+              name="submit-button"
+              type="button"
+              value="HTML"
+            >
+              <span>Save</span>
+            </button>
+            <button
+              class="delete-button"
+              name="delete-button"
+              type="button"
+              value="CSS"
+            >
+              <span>Delete</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
