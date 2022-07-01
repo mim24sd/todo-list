@@ -8,7 +8,7 @@
 /* Shared styles */
 
 body {
-  background-image: url(../img/wall.png);
+  background-image: url(../images/wallpapers/wallpaper.png);
   margin: var(--large);
   justify-items: center;
   font-family: var(--font);
