@@ -1,0 +1,17 @@
+@import "./normalize.css";
+@import "./variables.css";
+
+body {
+    background-image: url(../images/wallpapers/wallpaper.png);
+    margin: var(--space-lg);
+    justify-items: center;
+    font-family: var(--font);
+}
+
+button {
+    font-size: medium;
+}
+
+h2 {
+    padding-left: var(--space-md);
+}

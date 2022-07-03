@@ -1,50 +1,8 @@
 @import "./normalize.css";
 @import "./variables.css";
+@import "./general.css";
 
 @import "./nav.css";
 @import "./addOrEditTask.css";
 @import "./taskTable.css";
-
-/* Shared styles */
-
-body {
-  background-image: url(../images/wallpapers/wallpaper.png);
-  margin: var(--large);
-  justify-items: center;
-  font-family: var(--font);
-}
-
-button {
-  font-size: medium;
-}
-
-h2 {
-  padding-left: var(--medium);
-}
-
-/* .................................................................... */
-
-/* background */
-
-.background-box {
-  border-radius: var(--small);
-  justify-content: center;
-  display: grid;
-  grid-template-columns: 17% 82%;
-  grid-template-rows: 94vh;
-  grid-column-gap: var(--large);
-}  
-
-/* main */
-
-.main-box {
-  background-color: var(--white);
-  padding: var(--large);
-  align-items: center;
-  border-radius: var(--medium);
-  box-shadow: var(--primaryShadowColor);
-  display: grid;
-  grid-template-columns: 62% 36%;
-  grid-column-gap: var(--large);
-}
-
+@import "./todayTasks.css";

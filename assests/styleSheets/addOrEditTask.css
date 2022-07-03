@@ -2,249 +2,248 @@
 @import "./variables.css";
 
 
-  .new-task-box {
-    height: 100%; 
-    background-color: var(--white);
-    border-radius: var(--small);
-    box-shadow: var(--primaryShadowColor);
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+.new-task-box {
+  height: 100%;
+  background-color: var(--white);
+  border-radius: var(--space-sm);
+  box-shadow: var(--primaryShadowColor);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
-  .new-task-box::-webkit-scrollbar-track {
-	  border-radius: var(--small);
-  }
+.new-task-box::-webkit-scrollbar-track {
+  border-radius: var(--space-sm);
+}
 
-  .new-task-box::-webkit-scrollbar {
-	  width: var(--small);
-  }
+.new-task-box::-webkit-scrollbar {
+  width: var(--space-sm);
+}
 
-  .new-task-box::-webkit-scrollbar-thumb{ 
-	  border-radius: var(--small);
-	  background-color: var(--extraColor);
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: var(--medium);
-  }
-  
-  label {
-    font-size: larger;
-    margin: var(--large) 0 var(--medium) 0;
-  }
-  
-  .input {
-    font-size: medium;
-    padding: var(--small);
-    border: none;
-    outline: none;
-    border-radius: var(--small);
-    box-shadow: var(--secondaryShadowColor);
-   
-  }
-  
-  input:focus {
-    box-shadow: var(--focusPrimaryShadowColor);
-  }
-  
-  .category-row-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit , 60px);
-    grid-auto-rows: 60px; 
-    grid-gap: var(--large);
-  }
-  
-  .category-family {
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--familyColor);
-    box-shadow: var(--secondaryShadowColor);
-  }
-  
-  .category-health {
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--healthColor);
-    box-shadow: var(--secondaryShadowColor);
-  }
-  
-  .category-job {
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--jobColor);
-    box-shadow: var(--secondaryShadowColor);
-  }
-  
-  .category-study {
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--studyColor);
-    box-shadow: var(--secondaryShadowColor);
-  }
-  
-  .category-entertainment {
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--entertainmentColor);
-    box-shadow: var(--secondaryShadowColor);
-  }
-  
-  .category-logo {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .category-family:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--familyColor);
-    box-shadow: var(--hoverShadowColor);
-  }
-  
-  .category-health:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--healthColor);
-    box-shadow: var(--hoverShadowColor);
-  }
-  
-  .category-job:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--jobColor);
-    box-shadow: var(--hoverShadowColor);
-  }
-  
-  .category-study:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--studyColor);
-    box-shadow: var(--hoverShadowColor);
-  }
-  
-  .category-entertainment:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--entertainmentColor);
-    box-shadow: var(--hoverShadowColor);
-  }
-  
-  .category-family:focus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--familyColor);
-    box-shadow: var(--focusSecondaryShadowColor);
-  }
-  
-  .category-health:focus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--healthColor);
-    box-shadow: var(--focusSecondaryShadowColor);
-  }
-  
-  .category-job:focus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--jobColor);
-    box-shadow: var(--focusSecondaryShadowColor);
-  }
-  
-  .category-study:focus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--studyColor);
-    box-shadow: var(--focusSecondaryShadowColor);
-  }
-  
-  .category-entertainment:focus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--small);
-    background-color: var(--entertainmentColor);
-    box-shadow: var(--focusPrimaryShadowColor)
-  }
-  
-  .submit-button {
-    margin: var(--medium) 0 var(--small) 0;
-    padding: var(--medium);
-    width: 65%;
-    align-self: center;
-    border-radius: var(--small);
-    font-size: medium;
-    border: none;
-    background-image: linear-gradient(to right, var(--familyColor), var(--healthColor));
-  }
-  
-  .submit-button:hover {
-    margin: var(--medium) 0 var(--small) 0;
-    padding: var(--medium);
-    width: 65%;
-    align-self: center;
-    border-radius: var(--small);
-    font-size: medium;
-    border: none;
-    background-image: linear-gradient(to right, var(--familyColor), var(--healthColor));
-    box-shadow: var(--hoverShadowColor);
-  }
-  
-  .delete-button {
-    margin: var(--small) 0 var(--small) 0;
-    padding: var(--medium);
-    width: 65%;
-    align-self: center;
-    border-radius: var(--small);
-    font-size: medium;
-    border: none;
-    background-image: linear-gradient(to right, var(--studyColor), var(--entertainmentColor));
-  }
-  
-  .delete-button:hover {
-    margin: var(--small) 0 var(--small) 0;
-    padding: var(--medium);
-    width: 65%;
-    align-self: center;
-    border-radius: var(--small);
-    font-size: medium;
-    border: none;
-    background-image: linear-gradient(to right, var(--studyColor), var(--entertainmentColor));
-    box-shadow: var(--hoverShadowColor);
-  }
-  
+.new-task-box::-webkit-scrollbar-thumb {
+  border-radius: var(--space-sm);
+  background-color: var(--extraColor);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+label {
+  font-size: larger;
+  margin: var(--space-lg) 0 var(--space-md) 0;
+}
+
+.input {
+  font-size: medium;
+  padding: var(--space-sm);
+  border: none;
+  outline: none;
+  border-radius: var(--space-sm);
+  box-shadow: var(--secondaryShadowColor);
+
+}
+
+input:focus {
+  box-shadow: var(--focusPrimaryShadowColor);
+}
+
+.category-row-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 60px);
+  grid-auto-rows: 60px;
+  grid-gap: var(--space-lg);
+}
+
+.category-family {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--familyColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-health {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--healthColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-job {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--jobColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-study {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--studyColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-entertainment {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--entertainmentColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-logo {
+  width: 45px;
+  height: 45px;
+}
+
+.category-family:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--familyColor);
+  box-shadow: var(--hoverShadowColor);
+}
+
+.category-health:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--healthColor);
+  box-shadow: var(--hoverShadowColor);
+}
+
+.category-job:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--jobColor);
+  box-shadow: var(--hoverShadowColor);
+}
+
+.category-study:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--studyColor);
+  box-shadow: var(--hoverShadowColor);
+}
+
+.category-entertainment:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--entertainmentColor);
+  box-shadow: var(--hoverShadowColor);
+}
+
+.category-family:focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--familyColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.category-health:focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--healthColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.category-job:focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--jobColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.category-study:focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--studyColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.category-entertainment:focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--entertainmentColor);
+  box-shadow: var(--focusPrimaryShadowColor)
+}
+
+.submit-button {
+  margin: var(--space-md) 0 var(--space-sm) 0;
+  padding: var(--space-md);
+  width: 65%;
+  align-self: center;
+  border-radius: var(--space-sm);
+  font-size: medium;
+  border: none;
+  background-image: linear-gradient(to right, var(--familyColor), var(--healthColor));
+}
+
+.submit-button:hover {
+  margin: var(--space-md) 0 var(--space-sm) 0;
+  padding: var(--space-md);
+  width: 65%;
+  align-self: center;
+  border-radius: var(--space-sm);
+  font-size: medium;
+  border: none;
+  background-image: linear-gradient(to right, var(--familyColor), var(--healthColor));
+  box-shadow: var(--hoverShadowColor);
+}
+
+.delete-button {
+  margin: var(--space-sm) 0 var(--space-sm) 0;
+  padding: var(--space-md);
+  width: 65%;
+  align-self: center;
+  border-radius: var(--space-sm);
+  font-size: medium;
+  border: none;
+  background-image: linear-gradient(to right, var(--studyColor), var(--entertainmentColor));
+}
+
+.delete-button:hover {
+  margin: var(--space-sm) 0 var(--space-sm) 0;
+  padding: var(--space-md);
+  width: 65%;
+  align-self: center;
+  border-radius: var(--space-sm);
+  font-size: medium;
+  border: none;
+  background-image: linear-gradient(to right, var(--studyColor), var(--entertainmentColor));
+  box-shadow: var(--hoverShadowColor);
+}

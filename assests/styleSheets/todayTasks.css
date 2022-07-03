@@ -1,0 +1,22 @@
+@import "./normalize.css";
+@import "./variables.css";
+
+.background-box {
+  border-radius: var(--space-sm);
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 17% 82%;
+  grid-template-rows: 94vh;
+  grid-column-gap: var(--space-lg);
+}
+
+.main-box {
+  background-color: var(--white);
+  padding: var(--space-lg);
+  align-items: center;
+  border-radius: var(--space-md);
+  box-shadow: var(--primaryShadowColor);
+  display: grid;
+  grid-template-columns: 62% 36%;
+  grid-column-gap: var(--space-lg);
+}

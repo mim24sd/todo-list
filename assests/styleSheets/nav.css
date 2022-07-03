@@ -2,59 +2,60 @@
 @import "./variables.css";
 
 .nav-bar {
-    background-color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: var(--medium);
-    box-shadow: var(--primaryShadowColor);
-  }
-  
-  .logo-box {
-    margin-bottom: var(--medium);
-    align-self: center;
-    width: 12vw;
-  }
-  
-  .logo {
-    width: 100%;
-  }
-  
-  .nav-bar-button {
-    width: 12vw;
-    margin-top: var(--medium);
-    padding: var(--medium) var(--medium);
-    border: none;
-    text-align: start;
-    background-color: var(--white);
-    border-radius: var(--small);
-    box-shadow: var(--primaryShadowColor);
-  }
-  
-  .nav-bar-button:hover {
-    width: 12vw;
-    margin-top: var(--medium);
-    padding: var(--medium) var(--medium);
-    border: none;
-    text-align: start;
-    background-color: var(--white);
-    border-radius: var(--small);
-    box-shadow: var(--hoverShadowColor);
-  }
-  
-  .nav-bar-button:focus {
-    width: 12vw;
-    margin-top: var(--medium);
-    padding: var(--medium) var(--medium);
-    border: none;
-    text-align: start;
-    background-color: var(--white);
-    border-radius: var(--small);
-    box-shadow: var(--focusPrimaryShadowColor)
-  }
-  
-  .button-icon {
-    width: var(--large);
-    margin-right: var(--small);
-    vertical-align: middle;
-  }
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--space-md);
+  box-shadow: var(--primaryShadowColor);
+}
+
+.logo-box {
+  margin-bottom: var(--space-md);
+  align-self: center;
+  width: 12vw;
+}
+
+.logo {
+  width: 100%;
+}
+
+.nav-bar-button {
+  width: 12vw;
+  margin-top: var(--space-md);
+  padding: var(--space-md) var(--space-md);
+  border: none;
+  text-align: start;
+  background-color: var(--white);
+  border-radius: var(--space-sm);
+  box-shadow: var(--primaryShadowColor);
+  font-family: var(--font);
+}
+
+.nav-bar-button:hover {
+  width: 12vw;
+  margin-top: var(--space-md);
+  padding: var(--space-md) var(--space-md);
+  border: none;
+  text-align: start;
+  background-color: var(--white);
+  border-radius: var(--space-sm);
+  box-shadow: var(--hoverShadowColor);
+}
+
+.nav-bar-button:focus {
+  width: 12vw;
+  margin-top: var(--space-md);
+  padding: var(--space-md) var(--space-md);
+  border: none;
+  text-align: start;
+  background-color: var(--white);
+  border-radius: var(--space-sm);
+  box-shadow: var(--focusPrimaryShadowColor)
+}
+
+.button-icon {
+  width: var(--space-lg);
+  margin-right: var(--space-sm);
+  vertical-align: middle;
+}
