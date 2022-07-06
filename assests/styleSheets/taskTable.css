@@ -3,7 +3,7 @@
 
 .task-table-box {
   height: 100%;
-  background-color: var(--white);
+  background-color: var(--backgroundColor);
   border-radius: var(--space-sm);
   box-shadow: var(--primaryShadowColor);
   padding: 0 var(--space-md) 0 var(--space-md);
@@ -32,7 +32,7 @@ table {
 
 .table-header {
   height: 30px;
-  font-family: var(--font);
+  font-family: var(--primaryFont);
   margin-top: var(--space-md);
 }
 
@@ -40,12 +40,14 @@ table {
   margin-top: var(--space-sm);
   border-radius: var(--space-sm);
   box-shadow: var(--primaryShadowColor);
+  cursor: pointer;
 }
 
 .table-row:hover {
   border-radius: var(--space-sm);
   padding: var(--space-md);
-  box-shadow: var(--hoverShadowColor);
+  box-shadow: var(--hoverPrimaryShadowColor);
+  cursor: pointer;
 }
 
 th {
@@ -68,54 +70,51 @@ td:last-child {
 }
 
 .color-tag-family {
-  background-color: var(--familyColor);
+  background-color: var(--secondaryColor);
   width: var(--space-sm);
   padding: unset;
 }
 
 .color-tag-job {
-  background-color: var(--jobColor);
+  background-color: var(--tertiaryColor);
   width: var(--space-sm);
   padding: unset;
 }
 
 .color-tag-health {
-  background-color: var(--healthColor);
+  background-color: var(--primaryColor);
   width: var(--space-sm);
   padding: unset;
 }
 
 .task {
   padding: var(--space-md);
-  font-family: var(--font);
+  font-family: var(--primaryFont);
 }
 
 .time {
   padding: var(--space-md);
   width: 90px;
-  font-family: var(--font);
+  font-family: var(--primaryFont);
 }
 
 .check-box {
   width: 40px;
-
 }
 
 .check {
   border-radius: var(--space-md);
-  border: var(--familyColor);
+  border: var(--secondaryColor);
+  cursor: pointer;
 }
-
-
 
 @media only screen and (max-width: 920px) {
 
   .task-table-box {
     height: 100%;
-    background-color: var(--white);
+    background-color: var();
     border-radius: var(--space-sm);
     box-shadow: var(--primaryShadowColor);
     padding: 0 var(--space-md) var(--space-lg) var(--space-md);
   }
-
 }

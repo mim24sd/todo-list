@@ -46,7 +46,7 @@
       <!-- collapsed sidepanel -->
 
       <div id="mySidepanel" class="side-panel">
-        <button href="javascript:void(0)" class="side-panel-close" onclick="closeNav()">&times;</button>
+        <button class="side-panel-close" onclick="closeNav()">&times;</button>
 
         <button type="button" class="side-panel-button">
           <img class="button-icon" src="./assests/images/icons/today-icon.png" alt="today logo" />
@@ -99,10 +99,10 @@
 
         <form action="/action_page.php">
           <label class="label" for="title">Title:</label>
-          
-          <input class="input" type="text" id="title" name="title" />
 
-          <label class="label" for="time">Category:</label>
+          <input class="input-text" id="title" type="text" />
+
+          <label class="label">Category:</label>
 
           <div class="category-row-box">
             <button type="button" class="category-health">
@@ -128,7 +128,7 @@
 
           <label class="label" for="time">Time:</label>
 
-          <input class="input" type="time" id="time" name="time" />
+          <input class="input-text" id="time" type="time" name="time" />
 
           <button class="submit-button" name="submit-button" type="button">
             Save
@@ -143,12 +143,11 @@
   </main>
 
   <script>
-    /* Set the width of the sidebar to 250px (show it) */
+
     function openNav() {
       document.getElementById("mySidepanel").style.width = "200px";
     }
 
-    /* Set the width of the sidebar to 0 (hide it) */
     function closeNav() {
       document.getElementById("mySidepanel").style.width = "0";
     }

@@ -2,7 +2,7 @@
 @import "./variables.css";
 
 .nav-bar {
-  background-color: var(--white);
+  background-color: var(--backgroundColor);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,11 +26,12 @@
   padding: var(--space-md) var(--space-md);
   border: none;
   text-align: start;
-  background-color: var(--white);
+  background-color: var(--backgroundColor);
   border-radius: var(--space-sm);
   box-shadow: var(--primaryShadowColor);
-  font-family: var(--font);
+  font-family: var(--primaryFont);
   display: inline;
+  cursor: pointer;
 }
 
 .nav-bar-button:hover {
@@ -39,9 +40,10 @@
   padding: var(--space-md) var(--space-md);
   border: none;
   text-align: start;
-  background-color: var(--white);
+  background-color: var(--backgroundColor);
   border-radius: var(--space-sm);
-  box-shadow: var(--hoverShadowColor);
+  box-shadow: var(--hoverPrimaryShadowColor);
+  cursor: pointer;
 }
 
 .nav-bar-button:focus {
@@ -50,16 +52,16 @@
   padding: var(--space-md) var(--space-md);
   border: none;
   text-align: start;
-  background-color: var(--white);
+  background-color: var(--backgroundColor);
   border-radius: var(--space-sm);
-  box-shadow: var(--focusPrimaryShadowColor)
+  box-shadow: var(--focusPrimaryShadowColor);
+  cursor: pointer;
 }
 
 .button-icon {
   width: var(--space-lg);
   margin-right: var(--space-sm);
   vertical-align: middle;
-
 }
 
 .side-panel {
@@ -96,8 +98,9 @@
     background-color: none;
     border-radius: var(--space-sm);
     box-shadow: none;
-    font-family: var(--font);
+    font-family: var(--primaryFont);
     display: none;
+    cursor: pointer;
   }
 
   .nav-bar-button:hover {
@@ -109,6 +112,7 @@
     background-color: none;
     border-radius: var(--space-sm);
     box-shadow: none;
+    cursor: pointer;
   }
 
   .nav-bar-button:focus {
@@ -119,14 +123,14 @@
     text-align: start;
     background-color: none;
     border-radius: var(--space-sm);
-    box-shadow: none
+    box-shadow: none;
+    cursor: pointer;
   }
 
   .button-icon {
     width: var(--space-lg);
     margin-right: var(--space-sm);
     vertical-align: middle;
-
   }
 
   .side-panel {
@@ -136,9 +140,9 @@
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: var(--white);
+    background-color: var(--backgroundColor);
     overflow-x: hidden;
-    padding-top:  var(--space-lg);
+    padding-top: var(--space-lg);
     transition: 0.5s;
     display: flex;
     flex-direction: column;
@@ -147,13 +151,13 @@
   .side-panel-button {
     padding: var(--space-sm) var(--space-lg);
     font-size: var(--space-md);
-    color: var(--black);
+    color: var(--textColor);
     display: block;
     margin-top: var(--space-sm);
     transition: 0.3s;
-    font-family: var(--font);
+    font-family: var(--primaryFont);
     width: 90%;
-    background-color:unset;
+    background-color: unset;
     border-color: unset;
     box-shadow: none;
     border: unset;
@@ -166,33 +170,35 @@
   .side-panel-button:hover {
     padding: var(--space-sm) var(--space-lg);
     font-size: var(--space-md);
-    color: var(--black);
+    color: var(--textColor);
     display: block;
     margin-top: var(--space-sm);
     transition: 0.3s;
-    font-family: var(--font);
+    font-family: var(--primaryFont);
     width: 90%;
-    background-color:unset;
+    background-color: unset;
     border-color: unset;
     box-shadow: none;
+    cursor: pointer;
     border: unset;
     text-align: justify;
-    box-shadow: var(--hoverShadowColor);
+    box-shadow: var(--hoverPrimaryShadowColor);
   }
 
   .side-panel-button:focus {
-     padding: var(--space-sm) var(--space-lg);
+    padding: var(--space-sm) var(--space-lg);
     font-size: var(--space-md);
-    color: var(--black);
+    color: var(--textColor);
     display: block;
     margin-top: var(--space-sm);
     transition: 0.3s;
-    font-family: var(--font);
+    font-family: var(--primaryFont);
     width: 90%;
-    background-color:unset;
+    background-color: unset;
     border-color: unset;
     box-shadow: none;
     border: unset;
+    cursor: pointer;
     text-align: justify;
     box-shadow: var(--focusPrimaryShadowColor);
   }
@@ -201,19 +207,19 @@
     font-size: var(--size-xl);
     width: max-content;
     cursor: pointer;
-    background-color:unset;
+    background-color: unset;
     border-color: unset;
     box-shadow: none;
     border: unset;
-    font-family: var(--font);
-    margin-left: var(--space-md);
+    font-family: var(--primaryFont);
+    margin-left: var(--space-sm);
   }
 
   .side-panel-open {
     font-size: 20px;
     cursor: pointer;
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
     padding: 10px 15px;
     border: none;
     border-radius: var(--space-sm);
@@ -222,6 +228,6 @@
 
   .side-panel-open:hover {
     border-radius: var(--space-sm);
-    box-shadow: var(--primaryShadowColor);
+    box-shadow: var(--hoverPrimaryShadowColor);
   }
 }

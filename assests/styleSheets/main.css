@@ -1,10 +1,8 @@
 @import "./variables.css";
-
+@import "./general.css";
+@import "./reset.css";
 
 @import "./nav.css";
 @import "./addOrEditTask.css";
 @import "./taskTable.css";
 @import "./todayTasks.css";
-
-@import "./general.css";
-@import "./reset.css";
