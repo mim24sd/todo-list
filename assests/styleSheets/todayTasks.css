@@ -1,13 +1,16 @@
-@import "./normalize.css";
+@import "./reset.css";
 @import "./variables.css";
 
 .background-box {
   border-radius: var(--space-sm);
   justify-content: center;
   display: grid;
-  grid-template-columns: 17% 82%;
-  grid-template-rows: 94vh;
+  grid-template-columns: 15% 80%;
+  grid-template-rows: 95%;
   grid-column-gap: var(--space-lg);
+  grid-row-gap: var(--space-sm);
+  align-content: center;
+  height: 100%;
 }
 
 .main-box {
@@ -17,6 +20,46 @@
   border-radius: var(--space-md);
   box-shadow: var(--primaryShadowColor);
   display: grid;
-  grid-template-columns: 62% 36%;
+  grid-template-columns: repeat(auto-fit, 62% 36%);
   grid-column-gap: var(--space-lg);
+}
+
+@media only screen and (max-width: 960px) and (min-width: 920px) {
+  .main-box {
+    background-color: var(--white);
+    padding: var(--space-lg);
+    align-items: center;
+    border-radius: var(--space-md);
+    box-shadow: var(--primaryShadowColor);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100%);
+    grid-row-gap: var(--space-lg);
+  }
+}
+
+
+@media only screen and (max-width: 920px) {
+  .background-box {
+    border-radius: var(--space-sm);
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 90%);
+    grid-template-rows: 12% 82%;
+    grid-column-gap: var(--space-lg);
+    grid-row-gap: var(--space-lg);
+    align-content: center;
+    scroll-padding-bottom: 2em;
+  }
+
+  .main-box {
+    background-color: unset;
+    padding: 0 0 var(--space-lg) 0;
+    align-items: center;
+    border-radius: var(--space-md);
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100%);
+    grid-row-gap: var(--space-xl);
+    height: max-content;
+  }
 }

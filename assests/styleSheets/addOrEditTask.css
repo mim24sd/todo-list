@@ -1,4 +1,4 @@
-@import "./normalize.css";
+@import "./reset.css";
 @import "./variables.css";
 
 
@@ -9,6 +9,7 @@
   box-shadow: var(--primaryShadowColor);
   overflow-y: scroll;
   overflow-x: hidden;
+  padding: 0 var(--space-lg) 0 var(--space-lg);
 }
 
 .new-task-box::-webkit-scrollbar-track {
@@ -28,16 +29,17 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--space-md);
 }
 
-label {
-  font-size: larger;
+.label {
+  font-size: var(--size-md);
+  font-family: var(--font);
   margin: var(--space-lg) 0 var(--space-md) 0;
 }
 
 .input {
-  font-size: medium;
+  font-family: var(--font);
+  font-size: var(--space-md);
   padding: var(--space-sm);
   border: none;
   outline: none;
@@ -54,7 +56,7 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(auto-fit, 60px);
   grid-auto-rows: 60px;
-  grid-gap: var(--space-lg);
+  grid-gap: var(--space-md);
 }
 
 .category-family {
@@ -203,47 +205,78 @@ input:focus {
 }
 
 .submit-button {
-  margin: var(--space-md) 0 var(--space-sm) 0;
+  font-family: var(--font);
+  margin: var(--space-xl) 0 var(--space-sm) 0;
   padding: var(--space-md);
   width: 65%;
   align-self: center;
   border-radius: var(--space-sm);
-  font-size: medium;
+  font-size: var(--space-md);
   border: none;
   background-image: linear-gradient(to right, var(--familyColor), var(--healthColor));
 }
 
 .submit-button:hover {
-  margin: var(--space-md) 0 var(--space-sm) 0;
+  font-family: var(--font);
+  margin: var(--space-xl) 0 var(--space-sm) 0;
   padding: var(--space-md);
   width: 65%;
   align-self: center;
   border-radius: var(--space-sm);
-  font-size: medium;
+  font-size: var(--space-md);
   border: none;
   background-image: linear-gradient(to right, var(--familyColor), var(--healthColor));
   box-shadow: var(--hoverShadowColor);
 }
 
 .delete-button {
-  margin: var(--space-sm) 0 var(--space-sm) 0;
+  font-family: var(--font);
+  margin: var(--space-md) 0 var(--space-md) 0;
   padding: var(--space-md);
   width: 65%;
   align-self: center;
   border-radius: var(--space-sm);
-  font-size: medium;
+  font-size: var(--space-md);
   border: none;
   background-image: linear-gradient(to right, var(--studyColor), var(--entertainmentColor));
 }
 
 .delete-button:hover {
-  margin: var(--space-sm) 0 var(--space-sm) 0;
+  font-family: var(--font);
+  margin: var(--space-md) 0 var(--space-md) 0;
   padding: var(--space-md);
   width: 65%;
   align-self: center;
   border-radius: var(--space-sm);
-  font-size: medium;
+  font-size: var(--space-md);
   border: none;
   background-image: linear-gradient(to right, var(--studyColor), var(--entertainmentColor));
   box-shadow: var(--hoverShadowColor);
+}
+
+@media only screen and (max-width: 920px) {
+  .delete-button {
+    font-family: var(--font);
+    margin: var(--space-md) 0 var(--space-xl) 0;
+    padding: var(--space-md);
+    width: 65%;
+    align-self: center;
+    border-radius: var(--space-sm);
+    font-size: var(--space-md);
+    border: none;
+    background-image: linear-gradient(to right, var(--studyColor), var(--entertainmentColor));
+  }
+
+  .delete-button:hover {
+    font-family: var(--font);
+    margin: var(--space-md) 0 var(--space-xl) 0;
+    padding: var(--space-md);
+    width: 65%;
+    align-self: center;
+    border-radius: var(--space-sm);
+    font-size: var(--space-md);
+    border: none;
+    background-image: linear-gradient(to right, var(--studyColor), var(--entertainmentColor));
+    box-shadow: var(--hoverShadowColor);
+  }
 }

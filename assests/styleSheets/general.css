@@ -1,17 +1,43 @@
-@import "./normalize.css";
+@import "./reset.css";
 @import "./variables.css";
 
 body {
     background-image: url(../images/wallpapers/wallpaper.png);
-    margin: var(--space-lg);
-    justify-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: unset;
+    overflow-x: unset;
+}
+
+
+.header2 {
     font-family: var(--font);
+    font-size: var(--size-lg);
+    margin: var(--space-md) 0 var(--space-md) 0;
 }
 
-button {
-    font-size: medium;
-}
+@media only screen and (max-width: 960px) and (min-width: 920px) {
+    body {
+        background-image: url(../images/wallpapers/wallpaper.png);
+        height: 100vh;
+        width: 100vw;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
 
-h2 {
-    padding-left: var(--space-md);
+
+
+    body::-webkit-scrollbar-track {
+        border-radius: var(--space-sm);
+    }
+
+    body::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        border-radius: var(--space-sm);
+        background-color: var(--gray);
+    }
+
 }

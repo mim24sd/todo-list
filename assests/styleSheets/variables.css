@@ -8,6 +8,8 @@
   --extraColor: #efafab;
 
   --white: ghostwhite;
+  --black: black;
+  --gray: gray;
 
   /* shadow color */
   --primaryShadowColor: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -17,10 +19,11 @@
   --focusSecondaryShadowColor: rgba(137, 139, 139, 0.5) 0px 0px 0px 3px;
 
   /* size */
-  --small: 0.5em;
-  --medium: 1em;
-  --large: 1.2em;
-  --xLarge: 2em;
+  --size-unit: 1em;
+  --size-sm: calc(0.5 * var(--size-unit));
+  --size-md: calc(1 * var(--size-unit));
+  --size-lg: calc(1.5 * var(--size-unit));
+  --size-xl: calc(2 * var(--size-unit));
 
   /* spacing */
   --space-unit: 1em;
