@@ -2,18 +2,19 @@
 @import "./variables.css";
 
 .nav-bar {
-  background-color: var(--backgroundColor);
+  background-color: unset;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  border-radius: var(--space-md);
-  box-shadow: var(--primaryShadowColor);
+  border-radius: unset;
+  box-shadow: none;
 }
 
 .logo-box {
-  margin: var(--space-xl) 0 var(--space-md) 0;
+  margin: 0 var(--space-xl) 0 0;
   align-self: center;
-  width: 12vw;
+  width: 30vw;
 }
 
 .logo {
@@ -21,40 +22,40 @@
 }
 
 .nav-bar-button {
-  width: 12vw;
-  margin-top: var(--space-md);
-  padding: var(--space-md) var(--space-md);
+  width: 30vw;
+  margin-top: 0;
+  padding: 0;
   border: none;
   text-align: start;
-  background-color: var(--backgroundColor);
+  background-color: none;
   border-radius: var(--space-sm);
-  box-shadow: var(--primaryShadowColor);
+  box-shadow: none;
   font-family: var(--primaryFont);
-  display: inline;
+  display: none;
   cursor: pointer;
 }
 
 .nav-bar-button:hover {
-  width: 12vw;
+  width: 30vw;
   margin-top: var(--space-md);
   padding: var(--space-md) var(--space-md);
   border: none;
   text-align: start;
-  background-color: var(--backgroundColor);
+  background-color: none;
   border-radius: var(--space-sm);
-  box-shadow: var(--hoverPrimaryShadowColor);
+  box-shadow: none;
   cursor: pointer;
 }
 
 .nav-bar-button:focus {
-  width: 12vw;
+  width: 30vw;
   margin-top: var(--space-md);
   padding: var(--space-md) var(--space-md);
   border: none;
   text-align: start;
-  background-color: var(--backgroundColor);
+  background-color: none;
   border-radius: var(--space-sm);
-  box-shadow: var(--focusPrimaryShadowColor);
+  box-shadow: none;
   cursor: pointer;
 }
 
@@ -65,67 +66,159 @@
 }
 
 .side-panel {
-  display: none;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: var(--backgroundColor);
+  overflow-x: hidden;
+  padding-top: var(--space-lg);
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-panel-button {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--space-md);
+  color: var(--textColor);
+  display: block;
+  margin-top: var(--space-sm);
+  transition: 0.3s;
+  font-family: var(--primaryFont);
+  width: 90%;
+  background-color: unset;
+  border-color: unset;
+  box-shadow: none;
+  border: unset;
+  text-align: justify;
+  cursor: pointer;
+  border-radius: var(--space-sm);
+  align-self: center;
+}
+
+.side-panel-button:hover {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--space-md);
+  color: var(--textColor);
+  display: block;
+  margin-top: var(--space-sm);
+  transition: 0.3s;
+  font-family: var(--primaryFont);
+  width: 90%;
+  background-color: unset;
+  border-color: unset;
+  box-shadow: none;
+  cursor: pointer;
+  border: unset;
+  text-align: justify;
+  box-shadow: var(--hoverPrimaryShadowColor);
+}
+
+.side-panel-button:focus {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--space-md);
+  color: var(--textColor);
+  display: block;
+  margin-top: var(--space-sm);
+  transition: 0.3s;
+  font-family: var(--primaryFont);
+  width: 90%;
+  background-color: unset;
+  border-color: unset;
+  box-shadow: none;
+  border: unset;
+  cursor: pointer;
+  text-align: justify;
+  box-shadow: var(--focusPrimaryShadowColor);
+}
+
+.side-panel-close {
+  font-size: var(--size-xl);
+  width: max-content;
+  cursor: pointer;
+  background-color: unset;
+  border-color: unset;
+  box-shadow: none;
+  border: unset;
+  font-family: var(--primaryFont);
+  margin-left: var(--space-sm);
 }
 
 .side-panel-open {
-  display: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--space-sm);
+  display: inline;
 }
 
-@media only screen and (max-width: 920px) {
+.side-panel-open:hover {
+  border-radius: var(--space-sm);
+  box-shadow: var(--hoverPrimaryShadowColor);
+}
+
+@media only screen and (min-width: 920px) {
+
   .nav-bar {
-    background-color: unset;
+    background-color: var(--backgroundColor);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    border-radius: unset;
-    box-shadow: none;
+    border-radius: var(--space-md);
+    box-shadow: var(--primaryShadowColor);
+    justify-content: start;
   }
 
   .logo-box {
-    margin: 0 var(--space-xl) 0 0;
+    margin: var(--space-xl) 0 var(--space-md) 0;
     align-self: center;
-    width: 30vw;
+    width: 12vw;
   }
 
   .nav-bar-button {
-    width: 30vw;
-    margin-top: 0;
-    padding: 0;
+    width: 12vw;
+    margin-top: var(--space-md);
+    padding: var(--space-md) var(--space-md);
     border: none;
     text-align: start;
-    background-color: none;
+    background-color: var(--backgroundColor);
     border-radius: var(--space-sm);
-    box-shadow: none;
+    box-shadow: var(--primaryShadowColor);
     font-family: var(--primaryFont);
-    display: none;
+    display: inline;
     cursor: pointer;
   }
 
   .nav-bar-button:hover {
-    width: 30vw;
+    width: 12vw;
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md);
     border: none;
     text-align: start;
-    background-color: none;
+    background-color: var(--backgroundColor);
     border-radius: var(--space-sm);
-    box-shadow: none;
+    box-shadow: var(--hoverPrimaryShadowColor);
     cursor: pointer;
   }
 
   .nav-bar-button:focus {
-    width: 30vw;
+    width: 12vw;
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md);
     border: none;
     text-align: start;
-    background-color: none;
+    background-color: var(--backgroundColor);
     border-radius: var(--space-sm);
-    box-shadow: none;
+    box-shadow: var(--focusPrimaryShadowColor);
     cursor: pointer;
   }
+
 
   .button-icon {
     width: var(--space-lg);
@@ -134,100 +227,11 @@
   }
 
   .side-panel {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: var(--backgroundColor);
-    overflow-x: hidden;
-    padding-top: var(--space-lg);
-    transition: 0.5s;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .side-panel-button {
-    padding: var(--space-sm) var(--space-lg);
-    font-size: var(--space-md);
-    color: var(--textColor);
-    display: block;
-    margin-top: var(--space-sm);
-    transition: 0.3s;
-    font-family: var(--primaryFont);
-    width: 90%;
-    background-color: unset;
-    border-color: unset;
-    box-shadow: none;
-    border: unset;
-    text-align: justify;
-    cursor: pointer;
-    border-radius: var(--space-sm);
-    align-self: center;
-  }
-
-  .side-panel-button:hover {
-    padding: var(--space-sm) var(--space-lg);
-    font-size: var(--space-md);
-    color: var(--textColor);
-    display: block;
-    margin-top: var(--space-sm);
-    transition: 0.3s;
-    font-family: var(--primaryFont);
-    width: 90%;
-    background-color: unset;
-    border-color: unset;
-    box-shadow: none;
-    cursor: pointer;
-    border: unset;
-    text-align: justify;
-    box-shadow: var(--hoverPrimaryShadowColor);
-  }
-
-  .side-panel-button:focus {
-    padding: var(--space-sm) var(--space-lg);
-    font-size: var(--space-md);
-    color: var(--textColor);
-    display: block;
-    margin-top: var(--space-sm);
-    transition: 0.3s;
-    font-family: var(--primaryFont);
-    width: 90%;
-    background-color: unset;
-    border-color: unset;
-    box-shadow: none;
-    border: unset;
-    cursor: pointer;
-    text-align: justify;
-    box-shadow: var(--focusPrimaryShadowColor);
-  }
-
-  .side-panel-close {
-    font-size: var(--size-xl);
-    width: max-content;
-    cursor: pointer;
-    background-color: unset;
-    border-color: unset;
-    box-shadow: none;
-    border: unset;
-    font-family: var(--primaryFont);
-    margin-left: var(--space-sm);
+    display: none;
   }
 
   .side-panel-open {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: var(--backgroundColor);
-    color: var(--textColor);
-    padding: 10px 15px;
-    border: none;
-    border-radius: var(--space-sm);
-    display: inline;
+    display: none;
   }
 
-  .side-panel-open:hover {
-    border-radius: var(--space-sm);
-    box-shadow: var(--hoverPrimaryShadowColor);
-  }
 }

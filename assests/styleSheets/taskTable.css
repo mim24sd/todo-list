@@ -6,7 +6,7 @@
   background-color: var(--backgroundColor);
   border-radius: var(--space-sm);
   box-shadow: var(--primaryShadowColor);
-  padding: 0 var(--space-md) 0 var(--space-md);
+  padding: 0 var(--space-md) var(--space-lg) var(--space-md);
 }
 
 .task-table-box:-webkit-scrollbar-track {
@@ -108,13 +108,13 @@ td:last-child {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (min-width: 920px) {
 
   .task-table-box {
     height: 100%;
-    background-color: var();
+    background-color: var(--backgroundColor);
     border-radius: var(--space-sm);
     box-shadow: var(--primaryShadowColor);
-    padding: 0 var(--space-md) var(--space-lg) var(--space-md);
+    padding: 0 var(--space-md) 0 var(--space-md);
   }
 }

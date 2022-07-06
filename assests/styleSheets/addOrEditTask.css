@@ -247,7 +247,7 @@ form {
 
 .delete-button {
   font-family: var(--primaryFont);
-  margin: var(--space-md) 0 var(--space-md) 0;
+  margin: var(--space-md) 0 var(--space-xl) 0;
   padding: var(--space-md);
   width: 65%;
   align-self: center;
@@ -260,7 +260,7 @@ form {
 
 .delete-button:hover {
   font-family: var(--primaryFont);
-  margin: var(--space-md) 0 var(--space-md) 0;
+  margin: var(--space-md) 0 var(--space-xl) 0;
   padding: var(--space-md);
   width: 65%;
   align-self: center;
@@ -272,10 +272,10 @@ form {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (min-width: 920px) {
   .delete-button {
     font-family: var(--primaryFont);
-    margin: var(--space-md) 0 var(--space-xl) 0;
+    margin: var(--space-md) 0 var(--space-md) 0;
     padding: var(--space-md);
     width: 65%;
     align-self: center;
@@ -288,7 +288,7 @@ form {
 
   .delete-button:hover {
     font-family: var(--primaryFont);
-    margin: var(--space-md) 0 var(--space-xl) 0;
+    margin: var(--space-md) 0 var(--space-md) 0;
     padding: var(--space-md);
     width: 65%;
     align-self: center;
