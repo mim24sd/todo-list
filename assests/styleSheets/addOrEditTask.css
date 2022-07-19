@@ -1,33 +1,8 @@
 @import "./reset.css";
 @import "./variables.css";
 
-.new-task-box {
-  height: 100%;
-  background-color: var(--backgroundColor);
-  border-radius: var(--space-sm);
-  box-shadow: var(--primaryShadowColor);
-  overflow-y: scroll;
-  overflow-x: hidden;
-  padding: 0 var(--space-lg) 0 var(--space-lg);
-}
-
-.new-task-box::-webkit-scrollbar-track {
-  border-radius: var(--space-sm);
-}
-
-.new-task-box::-webkit-scrollbar {
-  width: var(--space-sm);
-}
-
-.new-task-box::-webkit-scrollbar-thumb {
-  border-radius: var(--space-sm);
-  background-color: var(--extraColor);
-}
-
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
 }
 
 .label {
@@ -44,7 +19,6 @@ form {
   outline: none;
   border-radius: var(--space-sm);
   box-shadow: var(--secondaryShadowColor);
-
 }
 
 .input-text:focus {
@@ -60,9 +34,8 @@ form {
 
 .category-family {
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--secondaryColor);
   box-shadow: var(--secondaryShadowColor);
@@ -71,9 +44,8 @@ form {
 
 .category-health {
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--primaryColor);
   box-shadow: var(--secondaryShadowColor);
@@ -82,9 +54,8 @@ form {
 
 .category-job {
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--tertiaryColor);
   box-shadow: var(--secondaryShadowColor);
@@ -93,9 +64,8 @@ form {
 
 .category-study {
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--quartaryColor);
   box-shadow: var(--secondaryShadowColor);
@@ -104,9 +74,8 @@ form {
 
 .category-entertainment {
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--quinaryColor);
   box-shadow: var(--secondaryShadowColor);
@@ -119,9 +88,9 @@ form {
 }
 
 .category-family:hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--secondaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
@@ -129,9 +98,9 @@ form {
 }
 
 .category-health:hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--primaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
@@ -139,9 +108,9 @@ form {
 }
 
 .category-job:hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--tertiaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
@@ -149,9 +118,9 @@ form {
 }
 
 .category-study:hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--quartaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
@@ -159,9 +128,9 @@ form {
 }
 
 .category-entertainment:hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--quinaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
@@ -169,9 +138,9 @@ form {
 }
 
 .category-family:focus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--secondaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
@@ -179,9 +148,9 @@ form {
 }
 
 .category-health:focus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--primaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
@@ -189,9 +158,9 @@ form {
 }
 
 .category-job:focus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--tertiaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
@@ -199,9 +168,9 @@ form {
 }
 
 .category-study:focus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--quartaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
@@ -209,12 +178,12 @@ form {
 }
 
 .category-entertainment:focus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  display: grid;
+  place-items: center;
   border-radius: var(--space-sm);
   background-color: var(--quinaryColor);
-  box-shadow: var(--focusPrimaryShadowColor);
+  box-shadow: var(--focusSecondaryShadowColor);
   cursor: pointer;
 }
 
@@ -222,81 +191,72 @@ form {
   font-family: var(--primaryFont);
   margin: var(--space-xl) 0 var(--space-sm) 0;
   padding: var(--space-md);
-  width: 65%;
+  width: 50%;
   align-self: center;
   border-radius: var(--space-sm);
   font-size: var(--space-md);
   border: none;
-  background-image: linear-gradient(to right, var(--secondaryColor), var(--primaryColor));
+  background-image: linear-gradient(
+    to right,
+    var(--secondaryColor),
+    var(--primaryColor)
+  );
   cursor: pointer;
+  justify-self: center;
 }
 
 .submit-button:hover {
   font-family: var(--primaryFont);
   margin: var(--space-xl) 0 var(--space-sm) 0;
   padding: var(--space-md);
-  width: 65%;
+  width: 50%;
   align-self: center;
   border-radius: var(--space-sm);
   font-size: var(--space-md);
   border: none;
-  background-image: linear-gradient(to right, var(--secondaryColor), var(--primaryColor));
+  background-image: linear-gradient(
+    to right,
+    var(--secondaryColor),
+    var(--primaryColor)
+  );
   box-shadow: var(--hoverPrimaryShadowColor);
   cursor: pointer;
+  justify-self: center;
 }
 
 .delete-button {
   font-family: var(--primaryFont);
   margin: var(--space-md) 0 var(--space-xl) 0;
   padding: var(--space-md);
-  width: 65%;
+  width: 50%;
   align-self: center;
   border-radius: var(--space-sm);
   font-size: var(--space-md);
   border: none;
-  background-image: linear-gradient(to right, var(--quartaryColor), var(--quinaryColor));
+  background-image: linear-gradient(
+    to right,
+    var(--quartaryColor),
+    var(--quinaryColor)
+  );
   cursor: pointer;
+  justify-self: center;
 }
 
 .delete-button:hover {
   font-family: var(--primaryFont);
   margin: var(--space-md) 0 var(--space-xl) 0;
   padding: var(--space-md);
-  width: 65%;
+  width: 50%;
   align-self: center;
   border-radius: var(--space-sm);
   font-size: var(--space-md);
   border: none;
-  background-image: linear-gradient(to right, var(--quartaryColor), var(--quinaryColor));
+  background-image: linear-gradient(
+    to right,
+    var(--quartaryColor),
+    var(--quinaryColor)
+  );
   box-shadow: var(--hoverPrimaryShadowColor);
   cursor: pointer;
-}
-
-@media only screen and (min-width: 920px) {
-  .delete-button {
-    font-family: var(--primaryFont);
-    margin: var(--space-md) 0 var(--space-md) 0;
-    padding: var(--space-md);
-    width: 65%;
-    align-self: center;
-    border-radius: var(--space-sm);
-    font-size: var(--space-md);
-    border: none;
-    background-image: linear-gradient(to right, var(--quartaryColor), var(--quinaryColor));
-    cursor: pointer;
-  }
-
-  .delete-button:hover {
-    font-family: var(--primaryFont);
-    margin: var(--space-md) 0 var(--space-md) 0;
-    padding: var(--space-md);
-    width: 65%;
-    align-self: center;
-    border-radius: var(--space-sm);
-    font-size: var(--space-md);
-    border: none;
-    background-image: linear-gradient(to right, var(--quartaryColor), var(--quinaryColor));
-    box-shadow: var(--hoverPrimaryShadowColor);
-    cursor: pointer;
-  }
+  justify-self: center;
 }

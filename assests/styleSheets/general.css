@@ -2,15 +2,14 @@
 @import "./variables.css";
 
 body {
-    background-image: url(../images/wallpapers/wallpaper.png);
-    height: 100vh;
-    width: 100vw;
-    overflow-y: unset;
-    overflow-x: unset;
+  background-image: url(../images/wallpapers/wallpaper.png);
+  height: 100vh;
+  overflow-y: unset;
+  overflow-x: unset;
 }
 
 .header2 {
-    font-family: var(--primaryFont);
-    font-size: var(--size-lg);
-    margin: var(--space-md) 0 var(--space-md) 0;
+  font-family: var(--primaryFont);
+  font-size: var(--size-lg);
+  margin-top: var(--space-md);
 }

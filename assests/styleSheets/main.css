@@ -1,8 +1,56 @@
-@import "./variables.css";
-@import "./general.css";
 @import "./reset.css";
+@import "./variables.css";
 
-@import "./nav.css";
-@import "./addOrEditTask.css";
-@import "./taskTable.css";
-@import "./todayTasks.css";
+body {
+    padding: var(--space-md);
+    height: max-content;
+  }
+  
+  .main-container {
+    display: grid;
+    grid-gap: var(--space-md);
+    padding: var(--space-md);
+    min-height: 93vh;
+  }
+  
+  .nav-container {
+    display: grid;
+    grid-gap: var(--space-md);
+  }
+  
+  .task-container {
+    display: grid;
+    grid-gap: var(--space-md) 0;
+  }
+  
+  .task-list {
+    background-color: var(--backgroundColor);
+    box-shadow: var(--primaryShadowColor);
+    padding: var(--space-lg);
+    border-radius: var(--space-sm);
+  }
+  
+  .add-task {
+    background-color: var(--backgroundColor);
+    border-radius: var(--space-sm);
+    box-shadow: var(--primaryShadowColor);
+    padding: var(--space-lg);
+  }
+  
+  @media (min-width: 900px) and (max-width: 1400px) {
+    .main-container {
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+  
+  @media screen and (min-width: 1400px) {
+    .main-container {
+      grid-template-columns: 1fr 5fr;
+    }
+  
+    .task-container {
+      grid-template-columns: 2fr 1.5fr;
+      grid-gap: 0 var(--space-md);
+    }
+  }
+  

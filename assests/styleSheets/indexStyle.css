@@ -1,0 +1,7 @@
+@import "reset.css";
+@import "nav.css";
+@import "general.css";
+@import "variables.css";
+@import "taskList.css";
+@import "addOrEditTask.css";
+@import "./main.css"
