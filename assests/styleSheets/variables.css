@@ -27,11 +27,11 @@
   --focusSecondaryShadowColor: rgba(137, 139, 139, 0.5) 0px 0px 0px 3px;
 
   /* sizes */
-  --size-unit: 8px;
-  --size-sm: calc(1 * var(--size-unit));
-  --size-md: calc(2 * var(--size-unit));
-  --size-lg: calc(3 * var(--size-unit));
-  --size-xl: calc(4 * var(--size-unit));
+  --size-unit: 1em;
+  --size-sm: calc(0.1 * var(--size-unit));
+  --size-md: calc(1 * var(--size-unit));
+  --size-lg: calc(2 * var(--size-unit));
+  --size-xl: calc(3 * var(--size-unit));
 
   /* spacing sizes */
   --space-unit: 8px;
