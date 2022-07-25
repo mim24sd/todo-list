@@ -19,9 +19,25 @@ form {
   outline: none;
   border-radius: var(--space-sm);
   box-shadow: var(--secondaryShadowColor);
+  cursor: pointer;
 }
 
 .input-text:focus {
+  box-shadow: var(--focusPrimaryShadowColor);
+}
+
+.input-time {
+  font-family: var(--primaryFont);
+  font-size: var(--space-md);
+  padding: var(--space-sm);
+  border: none;
+  outline: none;
+  border-radius: var(--space-sm);
+  box-shadow: var(--secondaryShadowColor);
+  cursor: pointer;
+}
+
+.input-time:focus {
   box-shadow: var(--focusPrimaryShadowColor);
 }
 

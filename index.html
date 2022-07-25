@@ -2,6 +2,7 @@
 
 <html>
   <head>
+    <title>ToDo List</title>
     <link rel="stylesheet" href="./assests/styleSheets/indexStyle.css" />
   </head>
 
@@ -14,39 +15,13 @@
               <img
                 class="logo"
                 src="./assests/images/logos/black-logo.PNG"
-                alt="todo-logo"
+                alt="todo logo"
               />
+              <span class="heading-text">hi</span>
             </h1>
           </div>
-          <button type="button" class="nav-bar-button">
-            <img
-              class="button-icon"
-              src="./assests/images/icons/today-icon.png"
-              alt="today logo"
-            />
-            Today
-          </button>
-          <button type="button" class="nav-bar-button">
-            <img
-              class="button-icon"
-              src="./assests/images/icons/category-icon.png"
-              alt="category logo"
-            />
-            Category
-          </button>
-          <button type="button" class="nav-bar-button">
-            <img
-              class="button-icon"
-              src="./assests/images/icons/goal-icon.png"
-              alt="goals logo"
-            />
-            Goals
-          </button>
-          <div id="mySidepanel" class="side-panel">
-            <button class="side-panel-close" onclick="closeNav()">
-              &times;
-            </button>
-            <button type="button" class="side-panel-button">
+          <section class="nav-button-box">
+            <button type="button" class="nav-bar-button">
               <img
                 class="button-icon"
                 src="./assests/images/icons/today-icon.png"
@@ -54,7 +29,7 @@
               />
               Today
             </button>
-            <button type="button" class="side-panel-button">
+            <button type="button" class="nav-bar-button">
               <img
                 class="button-icon"
                 src="./assests/images/icons/category-icon.png"
@@ -62,7 +37,36 @@
               />
               Category
             </button>
-            <button type="button" class="side-panel-button">
+            <button type="button" class="nav-bar-button">
+              <img
+                class="button-icon"
+                src="./assests/images/icons/goal-icon.png"
+                alt="goals logo"
+              />
+              Goals
+            </button>
+          </section>
+          <div id="mySidepanel" class="side-panel">
+            <button class="side-panel-close" onclick="closeNav()">
+              &times;
+            </button>
+            <button type="button" class="nav-bar-button">
+              <img
+                class="button-icon"
+                src="./assests/images/icons/today-icon.png"
+                alt="today logo"
+              />
+              Today
+            </button>
+            <button type="button" class="nav-bar-button">
+              <img
+                class="button-icon"
+                src="./assests/images/icons/category-icon.png"
+                alt="category logo"
+              />
+              Category
+            </button>
+            <button type="button" class="nav-bar-button">
               <img
                 class="button-icon"
                 src="./assests/images/icons/goal-icon.png"
@@ -76,33 +80,8 @@
       </div>
 
       <div class="task-container">
-        <section class="task-list">
-          <h2 class="header2">My Task List</h2>
-
-          <table class="table-box">
-            <tr>
-              <th class="table-box-color-tag"></th>
-              <th>Task</th>
-              <th>Time</th>
-              <th></th>
-            </tr>
-            <tr class="table-box-row">
-              <td class="table-box-color-tag-job"></td>
-              <td class="table-box-task">Maria Anders</td>
-              <td class="table-box-time">10:10 AM</td>
-              <td class="table-box-check-box">
-                <input
-                  class="table-box-check"
-                  type="checkbox"
-                  id="checkbox-done"
-                  name="checkbox-done"
-                />
-              </td>
-            </tr>
-          </table>
-        </section>
-        <div class="add-task">
-          <section class="new-task-box">
+        <section class="add-task">
+          <div class="new-task-box">
             <h2 class="header2">Add New Task</h2>
             <form action="/action_page.php">
               <label class="label" for="title">Title:</label>
@@ -146,7 +125,7 @@
                 </button>
               </div>
               <label class="label" for="time">Time:</label>
-              <input class="input-text" id="time" type="time" name="time" />
+              <input class="input-time" type="time" id="time" name="time" />
               <button class="submit-button" name="submit-button" type="button">
                 Save
               </button>
@@ -154,8 +133,33 @@
                 Delete
               </button>
             </form>
-          </section>
-        </div>
+          </div>
+        </section>
+        <section class="task-list">
+          <h2 class="header2">My Task List</h2>
+
+          <table class="table-box">
+            <tr>
+              <th class="table-box-color-tag"></th>
+              <th>Task</th>
+              <th>Time</th>
+              <th></th>
+            </tr>
+            <tr class="table-box-row">
+              <td class="table-box-color-tag-job"></td>
+              <td class="table-box-task">Maria Anders</td>
+              <td class="table-box-time">10:10 AM</td>
+              <td class="table-box-check-box">
+                <input
+                  class="table-box-check"
+                  type="checkbox"
+                  id="checkbox-done"
+                  name="checkbox-done"
+                />
+              </td>
+            </tr>
+          </table>
+        </section>
       </div>
     </div>
     <script>

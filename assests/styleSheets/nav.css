@@ -11,6 +11,10 @@
   border-radius: var(--space-sm);
 }
 
+.heading-text {
+  display: none;
+}
+
 .logo-box {
   margin: 0;
   align-self: center;
@@ -21,42 +25,62 @@
   width: 100%;
 }
 
-.nav-bar-button {
-  width: 30vw;
-  margin-top: 0;
-  padding: 0;
-  border: none;
-  text-align: start;
-  background-color: none;
-  border-radius: var(--space-sm);
-  box-shadow: none;
-  font-family: var(--primaryFont);
+.nav-button-box {
   display: none;
+}
+
+.nav-bar-button {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--space-md);
+  color: var(--textColor);
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--primaryFont);
+  width: 180px;
+  background-color: unset;
+  border-color: unset;
+  box-shadow: none;
+  border: unset;
+  text-align: justify;
   cursor: pointer;
+  border-radius: var(--space-sm);
+  align-self: center;
 }
 
 .nav-bar-button:hover {
-  width: 30vw;
-  margin-top: var(--space-md);
-  padding: var(--space-md) var(--space-md);
-  border: none;
-  text-align: start;
-  background-color: none;
-  border-radius: var(--space-sm);
-  box-shadow: none;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--space-md);
+  color: var(--textColor);
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--primaryFont);
+  width: 180px;
+  background-color: unset;
+  border-color: unset;
+  border: unset;
+  text-align: justify;
   cursor: pointer;
+  border-radius: var(--space-sm);
+  align-self: center;
+  box-shadow: var(--hoverPrimaryShadowColor);
 }
 
 .nav-bar-button:focus {
-  width: 30vw;
-  margin-top: var(--space-md);
-  padding: var(--space-md) var(--space-md);
-  border: none;
-  text-align: start;
-  background-color: none;
-  border-radius: var(--space-sm);
-  box-shadow: none;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--space-md);
+  color: var(--textColor);
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--primaryFont);
+  width: 180px;
+  background-color: unset;
+  border-color: unset;
+  border: unset;
+  text-align: justify;
   cursor: pointer;
+  border-radius: var(--space-sm);
+  align-self: center;
+  box-shadow: var(--focusPrimaryShadowColor);
 }
 
 .button-icon {
@@ -78,60 +102,6 @@
   transition: 0.5s;
   display: flex;
   flex-direction: column;
-}
-
-.side-panel-button {
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--space-md);
-  color: var(--textColor);
-  display: block;
-  margin-top: var(--space-sm);
-  font-family: var(--primaryFont);
-  width: 180px;
-  background-color: unset;
-  border-color: unset;
-  box-shadow: none;
-  border: unset;
-  text-align: justify;
-  cursor: pointer;
-  border-radius: var(--space-sm);
-  align-self: center;
-}
-
-.side-panel-button:hover {
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--space-md);
-  color: var(--textColor);
-  display: block;
-  margin-top: var(--space-sm);
-  font-family: var(--primaryFont);
-  width: 180px;
-  background-color: unset;
-  border-color: unset;
-  border: unset;
-  text-align: justify;
-  cursor: pointer;
-  border-radius: var(--space-sm);
-  align-self: center;
-  box-shadow: var(--hoverPrimaryShadowColor);
-}
-
-.side-panel-button:focus {
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--space-md);
-  color: var(--textColor);
-  display: block;
-  margin-top: var(--space-sm);
-  font-family: var(--primaryFont);
-  width: 180px;
-  background-color: unset;
-  border-color: unset;
-  border: unset;
-  text-align: justify;
-  cursor: pointer;
-  border-radius: var(--space-sm);
-  align-self: center;
-  box-shadow: var(--focusPrimaryShadowColor);
 }
 
 .side-panel-close {
@@ -168,7 +138,7 @@
     flex-direction: column;
     box-shadow: var(--primaryShadowColor);
     justify-content: start;
-    padding: 0;
+    padding: 0 var(--space-lg);
   }
 
   .logo-box {
@@ -176,8 +146,12 @@
     width: 12vw;
   }
 
+  .nav-button-box {
+    display: block;
+  }
+
   .nav-bar-button {
-    width: 80%;
+    width: 100%;
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md);
     background-color: var(--backgroundColor);
@@ -187,7 +161,7 @@
   }
 
   .nav-bar-button:hover {
-    width: 80%;
+    width: 100%;
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md);
     background-color: var(--backgroundColor);
@@ -197,7 +171,7 @@
   }
 
   .nav-bar-button:focus {
-    width: 80%;
+    width: 100%;
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md);
     background-color: var(--backgroundColor);
@@ -221,7 +195,7 @@
     flex-direction: column;
     box-shadow: var(--primaryShadowColor);
     justify-content: start;
-    padding: 0;
+    padding: 0 var(--space-xl);
   }
 
   .logo-box {
@@ -229,8 +203,12 @@
     width: 12vw;
   }
 
+  .nav-button-box {
+    display: block;
+  }
+
   .nav-bar-button {
-    width: 80%;
+    width: 100%;
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md);
     background-color: var(--backgroundColor);
@@ -239,7 +217,7 @@
   }
 
   .nav-bar-button:hover {
-    width: 80%;
+    width: 100%;
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md);
     background-color: var(--backgroundColor);
@@ -248,7 +226,7 @@
   }
 
   .nav-bar-button:focus {
-    width: 80%;
+    width: 100%;
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md);
     background-color: var(--backgroundColor);
