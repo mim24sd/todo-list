@@ -1,11 +1,6 @@
 @import "./reset.css";
 @import "./variables.css";
 
-body {
-  padding: var(--space-md);
-  height: max-content;
-}
-
 .main-container {
   display: grid;
   grid-gap: var(--space-md);

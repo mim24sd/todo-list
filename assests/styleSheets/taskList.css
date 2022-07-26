@@ -20,7 +20,7 @@
 
 th {
   text-align: left;
-  height: 2em;
+  margin-bottom: var(--space-lg);
 }
 
 td:first-child {
@@ -52,8 +52,4 @@ td:last-child {
 
 .table-box-check-box {
   width: 40px;
-}
-
-.table-box-check {
-  cursor: pointer;
 }

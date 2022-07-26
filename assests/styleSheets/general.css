@@ -1,13 +1,22 @@
-@import "./reset.css";
-@import "./variables.css";
+@import "variables.css";
+@import "general.css";
 
 body {
   background-image: url(../images/wallpapers/wallpaper.png);
-  height: 100vh;
+  padding: var(--space-md);
+  min-height: max-content;
 }
 
-.header2 {
+.section-title {
   font-family: var(--primaryFont);
   font-size: var(--size-lg);
   margin-top: var(--space-md);
+}
+
+input {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }

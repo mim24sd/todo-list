@@ -19,7 +19,6 @@ form {
   outline: none;
   border-radius: var(--space-sm);
   box-shadow: var(--secondaryShadowColor);
-  cursor: pointer;
 }
 
 .input-text:focus {
@@ -34,7 +33,6 @@ form {
   outline: none;
   border-radius: var(--space-sm);
   box-shadow: var(--secondaryShadowColor);
-  cursor: pointer;
 }
 
 .input-time:focus {
@@ -55,7 +53,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--secondaryColor);
   box-shadow: var(--secondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-health {
@@ -65,7 +62,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--primaryColor);
   box-shadow: var(--secondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-job {
@@ -75,7 +71,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--tertiaryColor);
   box-shadow: var(--secondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-study {
@@ -85,7 +80,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--quartaryColor);
   box-shadow: var(--secondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-entertainment {
@@ -95,7 +89,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--quinaryColor);
   box-shadow: var(--secondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-logo {
@@ -110,7 +103,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--secondaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
-  cursor: pointer;
 }
 
 .category-health:hover {
@@ -120,7 +112,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--primaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
-  cursor: pointer;
 }
 
 .category-job:hover {
@@ -130,7 +121,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--tertiaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
-  cursor: pointer;
 }
 
 .category-study:hover {
@@ -140,7 +130,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--quartaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
-  cursor: pointer;
 }
 
 .category-entertainment:hover {
@@ -150,7 +139,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--quinaryColor);
   box-shadow: var(--hoverPrimaryShadowColor);
-  cursor: pointer;
 }
 
 .category-family:focus {
@@ -160,7 +148,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--secondaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-health:focus {
@@ -170,7 +157,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--primaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-job:focus {
@@ -180,7 +166,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--tertiaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-study:focus {
@@ -190,7 +175,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--quartaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
-  cursor: pointer;
 }
 
 .category-entertainment:focus {
@@ -200,7 +184,6 @@ form {
   border-radius: var(--space-sm);
   background-color: var(--quinaryColor);
   box-shadow: var(--focusSecondaryShadowColor);
-  cursor: pointer;
 }
 
 .submit-button {
@@ -217,7 +200,7 @@ form {
     var(--secondaryColor),
     var(--primaryColor)
   );
-  cursor: pointer;
+
   justify-self: center;
 }
 
@@ -236,7 +219,7 @@ form {
     var(--primaryColor)
   );
   box-shadow: var(--hoverPrimaryShadowColor);
-  cursor: pointer;
+
   justify-self: center;
 }
 
@@ -254,7 +237,7 @@ form {
     var(--quartaryColor),
     var(--quinaryColor)
   );
-  cursor: pointer;
+
   justify-self: center;
 }
 
@@ -273,6 +256,6 @@ form {
     var(--quinaryColor)
   );
   box-shadow: var(--hoverPrimaryShadowColor);
-  cursor: pointer;
+
   justify-self: center;
 }

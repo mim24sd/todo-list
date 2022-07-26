@@ -42,7 +42,6 @@
   box-shadow: none;
   border: unset;
   text-align: justify;
-  cursor: pointer;
   border-radius: var(--space-sm);
   align-self: center;
 }
@@ -59,7 +58,6 @@
   border-color: unset;
   border: unset;
   text-align: justify;
-  cursor: pointer;
   border-radius: var(--space-sm);
   align-self: center;
   box-shadow: var(--hoverPrimaryShadowColor);
@@ -77,7 +75,6 @@
   border-color: unset;
   border: unset;
   text-align: justify;
-  cursor: pointer;
   border-radius: var(--space-sm);
   align-self: center;
   box-shadow: var(--focusPrimaryShadowColor);
@@ -107,7 +104,6 @@
 .side-panel-close {
   font-size: var(--size-lg);
   width: max-content;
-  cursor: pointer;
   background-color: unset;
   border: unset;
   font-family: var(--primaryFont);
@@ -118,7 +114,6 @@
   font-size: var(--size-lg);
   display: grid;
   place-items: center;
-  cursor: pointer;
   background-color: var(--backgroundColor);
   color: var(--textColor);
   padding: 10px 15px;
