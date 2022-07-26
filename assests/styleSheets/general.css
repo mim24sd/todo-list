@@ -13,10 +13,7 @@ body {
   margin-top: var(--space-md);
 }
 
-input {
-  cursor: pointer;
-}
-
+input,
 button {
   cursor: pointer;
 }

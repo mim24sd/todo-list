@@ -66,10 +66,7 @@
     grid-gap: 0 var(--space-md);
   }
 
-  .task-list {
-    height: auto;
-  }
-
+  .task-list,
   .add-task {
     height: auto;
   }
