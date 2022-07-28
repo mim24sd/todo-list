@@ -1,0 +1,261 @@
+@import "./reset.css";
+@import "./variables.css";
+
+form {
+  display: grid;
+}
+
+.label {
+  font-size: var(--size-md);
+  font-family: var(--primaryFont);
+  margin: var(--space-lg) 0 var(--space-md) 0;
+}
+
+.input-text {
+  font-family: var(--primaryFont);
+  font-size: var(--space-md);
+  padding: var(--space-sm);
+  border: none;
+  outline: none;
+  border-radius: var(--space-sm);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.input-text:focus {
+  box-shadow: var(--focusPrimaryShadowColor);
+}
+
+.input-time {
+  font-family: var(--primaryFont);
+  font-size: var(--space-md);
+  padding: var(--space-sm);
+  border: none;
+  outline: none;
+  border-radius: var(--space-sm);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.input-time:focus {
+  box-shadow: var(--focusPrimaryShadowColor);
+}
+
+.category-row-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 60px);
+  grid-auto-rows: 60px;
+  grid-gap: var(--space-md);
+}
+
+.category-family {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--secondaryColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-health {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--primaryColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-job {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--tertiaryColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-study {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--quartaryColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-entertainment {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--quinaryColor);
+  box-shadow: var(--secondaryShadowColor);
+}
+
+.category-logo {
+  width: 45px;
+  height: 45px;
+}
+
+.category-family:hover {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--secondaryColor);
+  box-shadow: var(--hoverPrimaryShadowColor);
+}
+
+.category-health:hover {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--primaryColor);
+  box-shadow: var(--hoverPrimaryShadowColor);
+}
+
+.category-job:hover {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--tertiaryColor);
+  box-shadow: var(--hoverPrimaryShadowColor);
+}
+
+.category-study:hover {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--quartaryColor);
+  box-shadow: var(--hoverPrimaryShadowColor);
+}
+
+.category-entertainment:hover {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--quinaryColor);
+  box-shadow: var(--hoverPrimaryShadowColor);
+}
+
+.category-family:focus {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--secondaryColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.category-health:focus {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--primaryColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.category-job:focus {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--tertiaryColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.category-study:focus {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--quartaryColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.category-entertainment:focus {
+  border: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--space-sm);
+  background-color: var(--quinaryColor);
+  box-shadow: var(--focusSecondaryShadowColor);
+}
+
+.submit-button {
+  font-family: var(--primaryFont);
+  margin: var(--space-xl) 0 var(--space-sm) 0;
+  padding: var(--space-md);
+  width: 50%;
+  align-self: center;
+  border-radius: var(--space-sm);
+  font-size: var(--space-md);
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--secondaryColor),
+    var(--primaryColor)
+  );
+
+  justify-self: center;
+}
+
+.submit-button:hover {
+  font-family: var(--primaryFont);
+  margin: var(--space-xl) 0 var(--space-sm) 0;
+  padding: var(--space-md);
+  width: 50%;
+  align-self: center;
+  border-radius: var(--space-sm);
+  font-size: var(--space-md);
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--secondaryColor),
+    var(--primaryColor)
+  );
+  box-shadow: var(--hoverPrimaryShadowColor);
+
+  justify-self: center;
+}
+
+.delete-button {
+  font-family: var(--primaryFont);
+  margin: var(--space-md) 0 var(--space-xl) 0;
+  padding: var(--space-md);
+  width: 50%;
+  align-self: center;
+  border-radius: var(--space-sm);
+  font-size: var(--space-md);
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--quartaryColor),
+    var(--quinaryColor)
+  );
+
+  justify-self: center;
+}
+
+.delete-button:hover {
+  font-family: var(--primaryFont);
+  margin: var(--space-md) 0 var(--space-xl) 0;
+  padding: var(--space-md);
+  width: 50%;
+  align-self: center;
+  border-radius: var(--space-sm);
+  font-size: var(--space-md);
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--quartaryColor),
+    var(--quinaryColor)
+  );
+  box-shadow: var(--hoverPrimaryShadowColor);
+
+  justify-self: center;
+}

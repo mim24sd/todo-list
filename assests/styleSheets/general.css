@@ -1,0 +1,19 @@
+@import "variables.css";
+@import "general.css";
+
+body {
+  background-image: url(../images/wallpapers/wallpaper.png);
+  padding: var(--space-md);
+  min-height: max-content;
+}
+
+.section-title {
+  font-family: var(--primaryFont);
+  font-size: var(--size-lg);
+  margin-top: var(--space-md);
+}
+
+input,
+button {
+  cursor: pointer;
+}

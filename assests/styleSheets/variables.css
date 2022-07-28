@@ -1,0 +1,45 @@
+:root {
+  /* colors */
+  --primaryColor: #b5ead7;
+  /*family*/
+  --secondaryColor: #c7ceea;
+  /*health*/
+  --tertiaryColor: #e2f0cb;
+  /*job*/
+  --quartaryColor: #f7d4bd;
+  /*study*/
+  --quinaryColor: #ff9aa2;
+  /*entertainment*/
+
+  --backgroundColor: ghostwhite;
+  --textColor: black;
+  --gray: gray;
+
+  /* shadow colors */
+  --primaryShadowColor: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --secondaryShadowColor: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+  --hoverPrimaryShadowColor: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  --focusPrimaryShadowColor: rgba(137, 139, 139, 0.3) 0px 0px 0px 3px;
+  --focusSecondaryShadowColor: rgba(137, 139, 139, 0.5) 0px 0px 0px 3px;
+
+  /* sizes */
+  --size-unit: 1em;
+  --size-sm: calc(0.1 * var(--size-unit));
+  --size-md: calc(1 * var(--size-unit));
+  --size-lg: calc(2 * var(--size-unit));
+  --size-xl: calc(3 * var(--size-unit));
+
+  /* spacing sizes */
+  --space-unit: 8px;
+  --space-sm: calc(1 * var(--space-unit));
+  --space-md: calc(2 * var(--space-unit));
+  --space-lg: calc(3 * var(--space-unit));
+  --space-xl: calc(4 * var(--space-unit));
+
+  /* fonts */
+  --primaryFont: cursive;
+}
