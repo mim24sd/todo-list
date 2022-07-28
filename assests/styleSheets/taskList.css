@@ -20,7 +20,6 @@
 
 th {
   text-align: left;
-  margin-bottom: var(--space-lg);
 }
 
 td:first-child {

@@ -5,7 +5,7 @@
   display: grid;
   grid-gap: var(--space-md);
   padding: var(--space-md);
-  min-height: 93vh;
+  min-height: 92.5vh;
 }
 
 .nav-container {
@@ -23,7 +23,6 @@
   box-shadow: var(--primaryShadowColor);
   padding: var(--space-lg);
   border-radius: var(--space-sm);
-  height: max-content;
 }
 
 .add-task {
@@ -31,28 +30,11 @@
   border-radius: var(--space-sm);
   box-shadow: var(--primaryShadowColor);
   padding: var(--space-lg);
-  height: max-content;
 }
 
 @media (min-width: 900px) and (max-width: 1400px) {
   .main-container {
     grid-template-columns: 1fr 3fr;
-  }
-
-  .task-list {
-    background-color: var(--backgroundColor);
-    box-shadow: var(--primaryShadowColor);
-    padding: var(--space-lg);
-    border-radius: var(--space-sm);
-    height: auto;
-  }
-
-  .add-task {
-    background-color: var(--backgroundColor);
-    border-radius: var(--space-sm);
-    box-shadow: var(--primaryShadowColor);
-    padding: var(--space-lg);
-    height: auto;
   }
 }
 
@@ -64,10 +46,5 @@
   .task-container {
     grid-template-columns: 2fr 1.5fr;
     grid-gap: 0 var(--space-md);
-  }
-
-  .task-list,
-  .add-task {
-    height: auto;
   }
 }
