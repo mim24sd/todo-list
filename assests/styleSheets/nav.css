@@ -3,10 +3,8 @@
 
 .nav-bar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  box-shadow: none;
   padding: 0 var(--space-md);
   border-radius: var(--space-sm);
 }
