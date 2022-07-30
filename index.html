@@ -50,7 +50,7 @@
             <button class="side-panel-close" onclick="closeNav()">
               &times;
             </button>
-            
+
             <button type="button" class="nav-bar-button">
               <img
                 class="button-icon"
@@ -81,12 +81,14 @@
       </div>
 
       <div class="task-container">
+        <!-- add task -->
         <section class="add-task">
           <div class="new-task-box">
-            <h2 class="section-title">Add New Task</h2>
+            <h2 class="section-title" id="add-task-header">Add New Task</h2>
+            <h2 class="section-title" id="edit-task-header">Edit My Task</h2>
             <form action="/action_page.php">
               <label class="label" for="title">Title:</label>
-              <input class="input-text" id="title" type="text" />
+              <input class="input-text" id="add-task-title" type="text" value=/>
               <label class="label">Category:</label>
               <div class="category-row-box">
                 <button type="button" class="category-health">
@@ -127,15 +129,26 @@
               </div>
               <label class="label" for="time">Time:</label>
               <input class="input-time" type="time" id="time" name="time" />
-              <button class="submit-button" name="submit-button" type="button">
+              <button
+                class="submit-button"
+                name="submit-button"
+                type="button"
+                onclick="addNewTask()"
+              >
                 Save
               </button>
-              <button class="delete-button" name="delete-button" type="button">
+              <button
+                id="edit-task-button"
+                class="delete-button"
+                name="delete-button"
+                type="button"
+              >
                 Delete
               </button>
             </form>
           </div>
         </section>
+        <!-- task list-->
         <section class="task-list">
           <h2 class="section-title">My Task List</h2>
 
@@ -163,14 +176,6 @@
         </section>
       </div>
     </div>
-    <script>
-      function openNav() {
-        document.getElementById("mySidepanel").style.width = "200px";
-      }
-
-      function closeNav() {
-        document.getElementById("mySidepanel").style.width = "0";
-      }
-    </script>
+    <script type="text/javascript" src="./index.js"></script>
   </body>
 </html>
