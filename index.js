@@ -17,6 +17,8 @@ if (Object.values(task).every((x) => x === null || x === "")) {
   document.getElementById("add-task-header").style.display = "none";
 }
 
-function addNewTask() {
+let submit = document.getElementById("submit-button");
+
+submit.addEventListener("click", () => {
   task.title = document.getElementById("add-task-title").value;
-}
+});
