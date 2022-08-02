@@ -6,7 +6,7 @@ function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
 
-let task = [];
+const tasks = [];
 
 console.log(task);
 
