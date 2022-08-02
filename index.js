@@ -8,15 +8,15 @@ function closeNav() {
 
 const tasks = [];
 
-console.log(task);
+console.log(tasks);
 
-let submit = document.getElementById("submit-button");
+let addTaskButton = document.getElementById("add-task-button");
 
-submit.addEventListener("click", () => {
-  task.push({
-    id: task.length + 1,
+addTaskButton.addEventListener("click", () => {
+  tasks.push({
+    id: tasks.length + 1,
     title: document.getElementById("task-title").value,
   });
 
-  console.log(task);
+  console.log(tasks);
 });
