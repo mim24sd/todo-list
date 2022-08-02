@@ -6,19 +6,17 @@ function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
 
-let task = { title: "" };
+let task = [];
 
-document.getElementById("add-task-title").value = task.title;
-
-if (Object.values(task).every((x) => x === null || x === "")) {
-  document.getElementById("edit-task-header").style.display = "none";
-  document.getElementById("edit-task-button").style.display = "none";
-} else {
-  document.getElementById("add-task-header").style.display = "none";
-}
+console.log(task);
 
 let submit = document.getElementById("submit-button");
 
 submit.addEventListener("click", () => {
-  task.title = document.getElementById("add-task-title").value;
+  task.push({
+    id: task.length + 1,
+    title: document.getElementById("task-title").value,
+  });
+
+  console.log(task);
 });
