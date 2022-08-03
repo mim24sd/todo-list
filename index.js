@@ -1,19 +1,20 @@
-function openNav() {
+openNavButton.addEventListener("click", () => {
   document.getElementById("mySidepanel").style.width = "200px";
-}
+});
 
-function closeNav() {
+closeNavButton.addEventListener("click", () => {
   document.getElementById("mySidepanel").style.width = "0";
-}
+});
 
 const tasks = [];
 const addTaskButton = document.getElementById("add-task-button");
+const taskTitleInput = document.getElementById("task-title-input");
 
 addTaskButton.addEventListener("click", () => {
-  const taskTitleInput = document.getElementById("task-title-input").value;
   tasks.push({
     id: tasks.length + 1,
-    title: taskTitleInput,
+    title: taskTitleInput.value,
   });
+
   console.log(tasks);
 });
