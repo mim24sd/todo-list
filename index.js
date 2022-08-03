@@ -10,7 +10,7 @@ const tasks = [];
 const addTaskButton = document.getElementById("add-task-button");
 
 addTaskButton.addEventListener("click", () => {
-  const taskTitle = document.getElementById("task-title").value;
+  const taskTitle = document.getElementById("task-title-input").value;
   tasks.push({
     id: tasks.length + 1,
     title: taskTitle,
