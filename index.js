@@ -8,8 +8,6 @@ function closeNav() {
 
 const tasks = [];
 
-console.log(tasks);
-
 const addTaskButton = document.getElementById("add-task-button");
 
 const taskTitle = document.getElementById("task-title").value;
