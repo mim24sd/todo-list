@@ -10,12 +10,14 @@ const tasks = [];
 
 console.log(tasks);
 
-let addTaskButton = document.getElementById("add-task-button");
+const addTaskButton = document.getElementById("add-task-button");
+
+const taskTitle = document.getElementById("task-title").value;
 
 addTaskButton.addEventListener("click", () => {
   tasks.push({
     id: tasks.length + 1,
-    title: document.getElementById("task-title").value,
+    title: taskTitle,
   });
 
   console.log(tasks);
