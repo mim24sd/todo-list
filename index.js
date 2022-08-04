@@ -1,3 +1,4 @@
+const sideMenuContainer = document.getElementById("side-menu-container");
 const openNavButton = document.getElementById("open-nav-button");
 const closeNavButton = document.getElementById("close-nav-button");
 const addTaskButton = document.getElementById("add-task-button");
@@ -5,11 +6,11 @@ const taskTitleInput = document.getElementById("task-title-input");
 const tasks = [];
 
 openNavButton.addEventListener("click", () => {
-  document.getElementById("mySidepanel").style.width = "200px";
+  sideMenuContainer.style.width = "200px";
 });
 
 closeNavButton.addEventListener("click", () => {
-  document.getElementById("mySidepanel").style.width = "0";
+  sideMenuContainer.style.width = "0";
 });
 
 addTaskButton.addEventListener("click", () => {
