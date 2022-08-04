@@ -1,6 +1,11 @@
+
+const openNavButton = document.getElementById("open-nav-button");
+
 openNavButton.addEventListener("click", () => {
   document.getElementById("mySidepanel").style.width = "200px";
 });
+
+const closeNavButton = document.getElementById("close-nav-button");
 
 closeNavButton.addEventListener("click", () => {
   document.getElementById("mySidepanel").style.width = "0";
