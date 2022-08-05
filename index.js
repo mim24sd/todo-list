@@ -17,6 +17,7 @@ addTaskButton.addEventListener("click", () => {
   tasks.push({
     id: tasks.length + 1,
     title: taskTitleInput.value,
+    isDone: false,
   });
 
   console.log(tasks);
