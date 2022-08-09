@@ -14,13 +14,11 @@ closeNavButton.addEventListener("click", () => {
 });
 
 addTaskButton.addEventListener("click", () => {
-  let createdAtISO = new Date().toISOString();
-
   tasks.push({
     id: tasks.length + 1,
     title: taskTitleInput.value,
     isDone: false,
-    createdAt: createdAtISO,
+    createdAt: new Date().toISOString(),
   });
 
   console.log(tasks);
