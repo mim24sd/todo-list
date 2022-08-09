@@ -22,4 +22,29 @@ addTaskButton.addEventListener("click", () => {
   });
 
   console.log(tasks);
+
+  for (let taskIndex in tasks) {
+    for (
+      let taskDetailIndex = 0;
+      taskDetailIndex < Object.values(tasks[taskIndex]).length;
+      taskDetailIndex++
+    ) {
+      // console.log(Object.values(tasks[taskIndex])[taskDetailIndex]);
+
+      // document.getElementById("show-task-title") = Object.values(tasks[taskIndex])[1];
+      // document.getElementById("show-task-time")= Object.values(tasks[taskIndex])[2];
+
+      '<td class="table-box-color-tag-job">' +
+        "" +
+        "</td>" +
+        '<td class="table-box-task" id="show-task-title">' +
+        Object.values(tasks[taskIndex])[1] +
+        "</td>";
+      '<td class="table-box-time" id="show-task-time">' +
+        Object.values(tasks[taskIndex])[2] +
+        "</td>";
+
+      document.getElementById("ma-table").appendChild(tr);
+    }
+  }
 });
