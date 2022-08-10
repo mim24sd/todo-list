@@ -18,6 +18,7 @@ addTaskButton.addEventListener("click", () => {
     id: tasks.length + 1,
     title: taskTitleInput.value,
     isDone: false,
+    createdAt: new Date().toISOString(),
   });
 
   console.log(tasks);
