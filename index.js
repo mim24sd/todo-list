@@ -23,7 +23,7 @@ addTaskButton.addEventListener("click", () => {
 
   console.log(tasks);
 
-  taskTable = document.getElementById("ma-table");
+  taskTable = document.getElementById("task-table");
   const TaskDetails = document.createElement("tr");
   TaskDetails.className = "table-box-row";
 
