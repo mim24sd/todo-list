@@ -38,10 +38,18 @@ addTaskButton.addEventListener("click", () => {
         "" +
         `</td>` +
         `<td class="table-box-task" id="show-task-title">` +
-        Object.values(tasks[taskIndex])[1] +
+        Object.values(tasks[taskArrayIndex])[1] +
         `</td>` +
         `<td class="table-box-time" id="show-task-time">` +
-        Object.values(tasks[taskIndex])[2] +
+        Object.values(tasks[taskArrayIndex])[2] +
+        `</td>` +
+        `<td class="table-box-check-box">` +
+        `<input
+          class="table-box-check"
+          type="checkbox"
+          id="checkbox-done"
+          name="checkbox-done"
+        />` +
         `</td>`;
 
       taskTable.append(TaskDetails);
