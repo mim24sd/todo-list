@@ -23,28 +23,28 @@ addTaskButton.addEventListener("click", () => {
 
   console.log(tasks);
 
-  for (let taskIndex in tasks) {
+  taskTable = document.getElementById("ma-table");
+  const TaskDetails = document.createElement("tr");
+  TaskDetails.className = "table-box-row";
+
+  for (let taskArrayIndex in tasks) {
     for (
-      let taskDetailIndex = 0;
-      taskDetailIndex < Object.values(tasks[taskIndex]).length;
-      taskDetailIndex++
+      let taskObjectIndex = 0;
+      taskObjectIndex < Object.values(tasks[taskArrayIndex]).length;
+      taskObjectIndex++
     ) {
-      // console.log(Object.values(tasks[taskIndex])[taskDetailIndex]);
-
-      // document.getElementById("show-task-title") = Object.values(tasks[taskIndex])[1];
-      // document.getElementById("show-task-time")= Object.values(tasks[taskIndex])[2];
-
-      '<td class="table-box-color-tag-job">' +
+      TaskDetails.innerHTML =
+        `<td class="table-box-color-tag-job">` +
         "" +
-        "</td>" +
-        '<td class="table-box-task" id="show-task-title">' +
+        `</td>` +
+        `<td class="table-box-task" id="show-task-title">` +
         Object.values(tasks[taskIndex])[1] +
-        "</td>";
-      '<td class="table-box-time" id="show-task-time">' +
+        `</td>` +
+        `<td class="table-box-time" id="show-task-time">` +
         Object.values(tasks[taskIndex])[2] +
-        "</td>";
+        `</td>`;
 
-      document.getElementById("ma-table").appendChild(tr);
+      taskTable.append(TaskDetails);
     }
   }
 });
