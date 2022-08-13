@@ -33,6 +33,7 @@ addTaskButton.addEventListener("click", () => {
       taskObjectIndex < Object.values(tasks[taskArrayIndex]).length;
       taskObjectIndex++
     ) {
+
       TaskDetails.innerHTML =
         `<td class="table-box-color-tag-job">` +
         "" +
@@ -41,7 +42,7 @@ addTaskButton.addEventListener("click", () => {
         Object.values(tasks[taskArrayIndex])[1] +
         `</td>` +
         `<td class="table-box-time" id="show-task-time">` +
-        Object.values(tasks[taskArrayIndex])[2] +
+        Object.values(tasks[taskArrayIndex])[3].toString().match(/\d\d:\d\d:\d\d/) +
         `</td>` +
         `<td class="table-box-check-box">` +
         `<input
