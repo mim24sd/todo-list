@@ -7,6 +7,8 @@ const taskTable = document.getElementById("task-table");
 const TaskItems = document.createElement("tr");
 const tasks = [];
 
+TaskItems.className = "table-box-row";
+
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = "200px";
 });
@@ -23,18 +25,18 @@ addTaskButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   });
 
-  TaskItems.className = "table-box-row";
-
   tasks.forEach((task) => {
+    const taskCreatedAt = Object.values(task)[3]
+      .toString()
+      .match(/\d\d:\d\d:\d\d/);
+
     TaskItems.innerHTML = `<td class="table-box-color-tag-job"> 
       </td> 
       <td class="table-box-task" id="show-task-title"> 
       ${Object.values(task)[1]} 
       </td> 
       <td class="table-box-time" id="show-task-time"> 
-      ${Object.values(task)[3]
-        .toString()
-        .match(/\d\d:\d\d:\d\d/)} 
+      ${taskCreatedAt} 
       </td> 
       <td class="table-box-check-box"> 
       <input
