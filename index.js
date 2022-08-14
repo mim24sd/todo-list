@@ -21,39 +21,32 @@ addTaskButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   });
 
-  console.log(tasks);
-
-  taskTable = document.getElementById("task-table");
+  const taskItems = document.getElementById("taskItem");
   const TaskDetails = document.createElement("tr");
   TaskDetails.className = "table-box-row";
 
-  for (let taskArrayIndex in tasks) {
-    for (
-      let taskObjectIndex = 0;
-      taskObjectIndex < Object.values(tasks[taskArrayIndex]).length;
-      taskObjectIndex++
-    ) {
-
-      TaskDetails.innerHTML =
-        `<td class="table-box-color-tag-job">` +
-        "" +
-        `</td>` +
-        `<td class="table-box-task" id="show-task-title">` +
-        Object.values(tasks[taskArrayIndex])[1] +
-        `</td>` +
-        `<td class="table-box-time" id="show-task-time">` +
-        Object.values(tasks[taskArrayIndex])[3].toString().match(/\d\d:\d\d:\d\d/) +
-        `</td>` +
-        `<td class="table-box-check-box">` +
-        `<input
+  tasks.forEach((task) => {
+    TaskDetails.innerHTML =
+      `<td class="table-box-color-tag-job">` +
+      "" +
+      `</td>` +
+      `<td class="table-box-task" id="show-task-title">` +
+      Object.values(task)[1] +
+      `</td>` +
+      `<td class="table-box-time" id="show-task-time">` +
+      Object.values(task)[3]
+        .toString()
+        .match(/\d\d:\d\d:\d\d/) +
+      `</td>` +
+      `<td class="table-box-check-box">` +
+      `<input
           class="table-box-check"
           type="checkbox"
           id="checkbox-done"
           name="checkbox-done"
         />` +
-        `</td>`;
+      `</td>`;
 
-      taskTable.append(TaskDetails);
-    }
-  }
+    taskItems.append(TaskDetails);
+  });
 });
