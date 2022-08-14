@@ -4,12 +4,22 @@
 .table-box {
   width: 100%;
   margin: var(--space-lg) 0;
+  display: grid;
+}
+
+.table-header-box{
+  display: flex;
+  justify-content: space-between;
 }
 
 .table-box-row {
   border-radius: var(--space-sm);
   box-shadow: var(--primaryShadowColor);
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 
 .table-box-row:hover {
