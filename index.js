@@ -3,6 +3,8 @@ const openNavButton = document.getElementById("open-nav-button");
 const closeNavButton = document.getElementById("close-nav-button");
 const addTaskButton = document.getElementById("add-task-button");
 const taskTitleInput = document.getElementById("task-title-input");
+const taskTable = document.getElementById("task-table");
+const TaskItems = document.createElement("tr");
 const tasks = [];
 
 openNavButton.addEventListener("click", () => {
@@ -21,13 +23,10 @@ addTaskButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   });
 
-  const taskItems = document.getElementById("taskItem");
-  const TaskDetails = document.createElement("tr");
-  TaskDetails.className = "table-box-row";
+  TaskItems.className = "table-box-row";
 
   tasks.forEach((task) => {
-    TaskDetails.innerHTML = 
-    `<td class="table-box-color-tag-job"> 
+    TaskItems.innerHTML = `<td class="table-box-color-tag-job"> 
       </td> 
       <td class="table-box-task" id="show-task-title"> 
       ${Object.values(task)[1]} 
@@ -46,6 +45,6 @@ addTaskButton.addEventListener("click", () => {
         /> 
       </td>`;
 
-    taskItems.append(TaskDetails);
+    taskTable.append(TaskItems);
   });
 });
