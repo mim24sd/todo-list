@@ -26,26 +26,25 @@ addTaskButton.addEventListener("click", () => {
   TaskDetails.className = "table-box-row";
 
   tasks.forEach((task) => {
-    TaskDetails.innerHTML =
-      `<td class="table-box-color-tag-job">` +
-      "" +
-      `</td>` +
-      `<td class="table-box-task" id="show-task-title">` +
-      Object.values(task)[1] +
-      `</td>` +
-      `<td class="table-box-time" id="show-task-time">` +
-      Object.values(task)[3]
+    TaskDetails.innerHTML = 
+    `<td class="table-box-color-tag-job"> 
+      </td> 
+      <td class="table-box-task" id="show-task-title"> 
+      ${Object.values(task)[1]} 
+      </td> 
+      <td class="table-box-time" id="show-task-time"> 
+      ${Object.values(task)[3]
         .toString()
-        .match(/\d\d:\d\d:\d\d/) +
-      `</td>` +
-      `<td class="table-box-check-box">` +
-      `<input
+        .match(/\d\d:\d\d:\d\d/)} 
+      </td> 
+      <td class="table-box-check-box"> 
+      <input
           class="table-box-check"
           type="checkbox"
           id="checkbox-done"
           name="checkbox-done"
-        />` +
-      `</td>`;
+        /> 
+      </td>`;
 
     taskItems.append(TaskDetails);
   });
