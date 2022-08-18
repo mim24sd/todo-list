@@ -25,12 +25,12 @@ addTaskButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   });
 
-  const el = tasks[tasks.length - 1];
-  const taskCreatedAt = el.createdAt.match(/\d\d:\d\d:\d\d/);
+  const taskListElement = tasks[tasks.length - 1];
+  const taskCreatedAt = taskListElement.createdAt.match(/\d\d:\d\d:\d\d/);
 
   taskHtml = `<ul class="table-box-row">
       <li class="table-box-task" id="show-task-title"> 
-      ${el.title} 
+      ${taskListElement.title} 
       </li> 
       <li class="table-box-time" id="show-task-time"> 
       ${taskCreatedAt}
