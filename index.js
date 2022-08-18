@@ -3,7 +3,10 @@ const openNavButton = document.getElementById("open-nav-button");
 const closeNavButton = document.getElementById("close-nav-button");
 const addTaskButton = document.getElementById("add-task-button");
 const taskTitleInput = document.getElementById("task-title-input");
-const taskTable = document.getElementById("task-table");
+let taskList = document.getElementById("task-list");
+let taskStore = ``;
+let taskHtml = ``;
+const taskTable = "";
 const tasks = [];
 
 openNavButton.addEventListener("click", () => {
@@ -22,19 +25,15 @@ addTaskButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   });
 
-  tasks.forEach((task) => {
-    const taskCreatedAt = Object.values(task)[3]
-      .toString()
-      .match(/\d\d:\d\d:\d\d/);
-    const taskItems = document.createElement("task-table");
-    taskItems.className = "table-box-row";
+  const el = tasks[tasks.length - 1];
+  const taskCreatedAt = el.createdAt.match(/\d\d:\d\d:\d\d/);
 
-    taskItems.innerHTML = `
+  taskHtml = `<ul class="table-box-row">
       <li class="table-box-task" id="show-task-title"> 
-      ${Object.values(task)[1]} 
+      ${el.title} 
       </li> 
       <li class="table-box-time" id="show-task-time"> 
-      ${taskCreatedAt} 
+      ${taskCreatedAt}
       </li> 
       <li class="table-box-check-box"> 
       <input
@@ -43,7 +42,10 @@ addTaskButton.addEventListener("click", () => {
           id="checkbox-done"
           name="checkbox-done"
         /> 
-      </li>`;
-    taskTable.append(taskItems);
-  });
+        </li>
+        </ul>`;
+
+  taskStore = taskStore + taskHtml;
+
+  taskList.innerHTML = taskStore;
 });
