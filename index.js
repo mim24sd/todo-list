@@ -29,19 +29,23 @@ addTaskButton.addEventListener("click", () => {
   const taskCreatedAt = taskListElement.createdAt.match(/\d\d:\d\d:\d\d/);
 
   taskHtml = `<ul class="table-box-row">
-      <li class="table-box-task" id="show-task-title"> 
+      <li class="table-box-task-title" id="show-task-title"> 
+      <div class="table-box-title">
       ${taskListElement.title} 
+      </div>
       </li> 
-      <li class="table-box-time" id="show-task-time"> 
+      <li class="table-box-task-not-title">
+      <div class="table-box-time" id="show-task-time"> 
       ${taskCreatedAt}
-      </li> 
-      <li class="table-box-check-box"> 
+      </div> 
+      <div class="table-box-check-box"> 
       <input
           class="table-box-check"
           type="checkbox"
           id="checkbox-done"
           name="checkbox-done"
         /> 
+        </div>
         </li>
         </ul>`;
 

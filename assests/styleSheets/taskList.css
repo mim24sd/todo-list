@@ -7,7 +7,7 @@
   display: grid;
 }
 
-.table-header-box{
+.table-header-box {
   display: flex;
   justify-content: space-between;
 }
@@ -16,10 +16,9 @@
   border-radius: var(--space-sm);
   box-shadow: var(--primaryShadowColor);
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 70% 20%;
   width: 100%;
-  align-items: center;
 }
 
 .table-box-row:hover {
@@ -30,6 +29,18 @@
 
 th {
   text-align: left;
+}
+
+.table-header-box {
+  width: 100%;
+}
+
+.table-header-title {
+  width: 70%;
+}
+
+.table-header-time {
+  width: 20%;
 }
 
 td:first-child {
@@ -48,17 +59,32 @@ td:last-child {
   padding: unset;
 }
 
-.table-box-task {
+.table-box-task-title {
   padding: var(--space-md);
   font-family: var(--primaryFont);
+  background-color: blueviolet;
+}
+
+.table-box-title {
+  padding: var(--space-md);
+  font-family: var(--primaryFont);
+  background-color: rgb(226, 116, 43);
+  word-wrap: break-word;
+}
+
+.table-box-task-not-title {
+  display: flex;
+  align-content: center;
+  background-color: rgb(255, 0, 234);
 }
 
 .table-box-time {
   padding: var(--space-md);
-  width: 90px;
   font-family: var(--primaryFont);
+  background-color: rgb(166, 255, 0);
 }
 
 .table-box-check-box {
-  width: 40px;
+  align-self: center;
+  background-color: rgb(43, 255, 0);
 }
