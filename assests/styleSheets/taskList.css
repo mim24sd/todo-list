@@ -2,14 +2,12 @@
 @import "./variables.css";
 
 .table-box {
-  width: 100%;
   margin: var(--space-lg) 0;
-  display: grid;
 }
 
 .table-header-box {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 75% 20% 5%;
 }
 
 .table-box-row {
@@ -17,8 +15,8 @@
   box-shadow: var(--primaryShadowColor);
   cursor: pointer;
   display: grid;
-  grid-template-columns: 70% 20%;
-  width: 100%;
+  grid-template-columns: 70% 25% 5%;
+  margin-top: var(--space-md);
 }
 
 .table-box-row:hover {
@@ -29,18 +27,6 @@
 
 th {
   text-align: left;
-}
-
-.table-header-box {
-  width: 100%;
-}
-
-.table-header-title {
-  width: 70%;
-}
-
-.table-header-time {
-  width: 20%;
 }
 
 td:first-child {
@@ -59,32 +45,20 @@ td:last-child {
   padding: unset;
 }
 
-.table-box-task-title {
-  padding: var(--space-md);
-  font-family: var(--primaryFont);
-  background-color: blueviolet;
-}
-
 .table-box-title {
   padding: var(--space-md);
   font-family: var(--primaryFont);
-  background-color: rgb(226, 116, 43);
   word-wrap: break-word;
-}
-
-.table-box-task-not-title {
-  display: flex;
-  align-content: center;
-  background-color: rgb(255, 0, 234);
+  line-height: normal;
 }
 
 .table-box-time {
   padding: var(--space-md);
   font-family: var(--primaryFont);
-  background-color: rgb(166, 255, 0);
+  align-self: center;
 }
 
 .table-box-check-box {
-  align-self: center;
-  background-color: rgb(43, 255, 0);
+  display: grid;
+  place-content: center;
 }
