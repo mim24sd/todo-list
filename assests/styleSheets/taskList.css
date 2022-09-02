@@ -15,8 +15,9 @@
   box-shadow: var(--primaryShadowColor);
   cursor: pointer;
   display: grid;
-  grid-template-columns: 70% 25% 5%;
+  grid-template-columns: 65% 30% 5%;
   margin-top: var(--space-md);
+  padding: var(--space-md);
 }
 
 .table-box-row:hover {
@@ -46,19 +47,17 @@ td:last-child {
 }
 
 .table-box-title {
-  padding: var(--space-md);
   font-family: var(--primaryFont);
   word-wrap: break-word;
   line-height: normal;
 }
 
 .table-box-time {
-  padding: var(--space-md);
   font-family: var(--primaryFont);
+  justify-self: center;
   align-self: center;
 }
 
 .table-box-check-box {
-  display: grid;
-  place-content: center;
+  width: 40%;
 }
