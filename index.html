@@ -143,28 +143,14 @@
         </section>
         <section class="task-list">
           <h2 class="section-title">My Task List</h2>
-
-          <table class="table-box">
-            <tr>
-              <th class="table-box-color-tag"></th>
-              <th>Task</th>
-              <th>Time</th>
-              <th></th>
-            </tr>
-            <tr class="table-box-row">
-              <td class="table-box-color-tag-job"></td>
-              <td class="table-box-task">Maria Anders</td>
-              <td class="table-box-time">10:10 AM</td>
-              <td class="table-box-check-box">
-                <input
-                  class="table-box-check"
-                  type="checkbox"
-                  id="checkbox-done"
-                  name="checkbox-done"
-                />
-              </td>
-            </tr>
-          </table>
+          <div class="table-box">
+            <div class="table-header-box">
+              <h3>Task</h3>
+              <h3>Time</h3>
+              <div></div>
+            </div>
+            <ul id="task-list"></ul>
+          </div>
         </section>
       </div>
     </div>

@@ -2,14 +2,22 @@
 @import "./variables.css";
 
 .table-box {
-  width: 100%;
   margin: var(--space-lg) 0;
+}
+
+.table-header-box {
+  display: grid;
+  grid-template-columns: 75% 20% 5%;
 }
 
 .table-box-row {
   border-radius: var(--space-sm);
   box-shadow: var(--primaryShadowColor);
   cursor: pointer;
+  display: grid;
+  grid-template-columns: 65% 30% 5%;
+  margin-top: var(--space-md);
+  padding: var(--space-md);
 }
 
 .table-box-row:hover {
@@ -38,17 +46,18 @@ td:last-child {
   padding: unset;
 }
 
-.table-box-task {
-  padding: var(--space-md);
+.table-box-title {
   font-family: var(--primaryFont);
+  word-wrap: break-word;
+  line-height: normal;
 }
 
 .table-box-time {
-  padding: var(--space-md);
-  width: 90px;
   font-family: var(--primaryFont);
+  justify-self: center;
+  align-self: center;
 }
 
 .table-box-check-box {
-  width: 40px;
+  width: 40%;
 }
