@@ -38,33 +38,33 @@ function renderTasks() {
 }
 
 function createTaskItem(task) {
-  return `<ul class="table-box-row">
+  return `<li class="table-box-row">
             ${createTaskTitle(task.title)}
             ${createTaskCreatedAt(task.createdAt)}
             ${createTaskCheckBox()}
-          </ul>`;
+          </li>`;
 }
 
 function createTaskTitle(taskTitle) {
-  return `<li class="table-box-title"> 
+  return `<div class="table-box-title"> 
             ${taskTitle} 
-          </li>`;
+          </div>`;
 }
 
 function createTaskCreatedAt(taskCreatedAt) {
   const normalizedCreatedAt = taskCreatedAt.match(/\d\d:\d\d:\d\d/);
 
-  return `<li class="table-box-title"> 
+  return `<div class="table-box-title"> 
             ${normalizedCreatedAt} 
-          </li>`;
+          </div>`;
 }
 
 function createTaskCheckBox() {
-  return `<li class="table-box-check-box"> 
+  return `<div class="table-box-check-box"> 
             <input
               type="checkbox"
               class="checkbox-done"
               name="checkbox-done"
             /> 
-          </li>`;
+          </div>`;
 }
