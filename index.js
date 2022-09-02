@@ -3,14 +3,13 @@ const openNavButton = document.getElementById("open-nav-button");
 const closeNavButton = document.getElementById("close-nav-button");
 const addTaskButton = document.getElementById("add-task-button");
 const taskTitleInput = document.getElementById("task-title-input");
-let taskList = document.getElementById("task-list");
-let taskStore = ``;
-let taskHtml = ``;
-const taskTable = "";
+const taskList = document.getElementById("task-list");
+
+const sideMenuContainerWidth = "200px";
 const tasks = [];
 
 openNavButton.addEventListener("click", () => {
-  sideMenuContainer.style.width = "200px";
+  sideMenuContainer.style.width = sideMenuContainerWidth;
 });
 
 closeNavButton.addEventListener("click", () => {
@@ -25,26 +24,47 @@ addTaskButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   });
 
-  const taskListElement = tasks[tasks.length - 1];
-  const taskCreatedAt = taskListElement.createdAt.match(/\d\d:\d\d:\d\d/);
-
-  taskHtml = `<ul class="table-box-row">
-      <li class="table-box-title" id="show-task-title"> 
-      ${taskListElement.title} 
-      </li> 
-      <li class="table-box-time" id="show-task-time"> 
-      ${taskCreatedAt}
-      </li> 
-      <li class="table-box-check-box"> 
-        <input
-          type="checkbox"
-          id="checkbox-done"
-          name="checkbox-done"
-        /> 
-      </li>
-      </ul>`;
-
-  taskStore = taskStore + taskHtml;
-
-  taskList.innerHTML = taskStore;
+  renderTasks();
 });
+
+function renderTasks() {
+  let tasksHtml = "";
+
+  tasks.forEach((task) => {
+    tasksHtml += createTaskItem(task);
+  });
+
+  taskList.innerHTML = tasksHtml;
+}
+
+function createTaskItem(task) {
+  return `<ul class="table-box-row">
+            ${createTaskTitle(task.title)}
+            ${createTaskCreatedAt(task.createdAt)}
+            ${createTaskCheckBox()}
+          </ul>`;
+}
+
+function createTaskTitle(taskTitle) {
+  return `<li class="table-box-title"> 
+            ${taskTitle} 
+          </li>`;
+}
+
+function createTaskCreatedAt(taskCreatedAt) {
+  const normalizedCreatedAt = taskCreatedAt.match(/\d\d:\d\d:\d\d/);
+
+  return `<li class="table-box-title"> 
+            ${normalizedCreatedAt} 
+          </li>`;
+}
+
+function createTaskCheckBox() {
+  return `<li class="table-box-check-box"> 
+            <input
+              type="checkbox"
+              class="checkbox-done"
+              name="checkbox-done"
+            /> 
+          </li>`;
+}
