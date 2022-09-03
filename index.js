@@ -29,19 +29,21 @@ addTaskButton.addEventListener("click", () => {
 
 function renderTasks() {
   let tasksHtml = "";
+  let countTasks = 0;
 
   tasks.forEach((task) => {
-    tasksHtml += createTaskItem(task);
+    countTasks += 1;
+    tasksHtml += createTaskItem(task, countTasks);
   });
 
   taskList.innerHTML = tasksHtml;
 }
 
-function createTaskItem(task) {
-  return `<li class="table-box-row">
+function createTaskItem(task, numberOfTask) {
+  return `<li class="table-box-row" id=task-${numberOfTask}>
             ${createTaskTitle(task.title)}
             ${createTaskCreatedAt(task.createdAt)}
-            ${createTaskCheckBox()}
+            ${createTaskCheckBox(task.isDone)}
           </li>`;
 }
 
@@ -62,7 +64,8 @@ function createTaskCreatedAt(taskCreatedAt) {
 function createTaskCheckBox() {
   return `<input
             type="checkbox"
-            class="table-box-check-box"
             name="checkbox-done"
           /> `;
 }
+
+console.log(document.getElementById("filter-tasks")); 
