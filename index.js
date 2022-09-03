@@ -67,5 +67,3 @@ function createTaskCheckBox() {
             name="checkbox-done"
           /> `;
 }
-
-console.log(document.getElementById("filter-tasks")); 
