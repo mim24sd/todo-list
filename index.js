@@ -34,7 +34,7 @@ taskSelection.addEventListener("change", () => {
 
   console.log(selectedTask);
 
-  selectTask(selectedTask);
+  selectTasks(selectedTask);
 });
 
 function renderTasks() {
@@ -78,14 +78,32 @@ function createTaskCheckBox() {
           /> `;
 }
 
-function selectTask(selectedfilter) {
+function selectTasks(selectedfilter) {
   if (selectedfilter == "noFilter") {
-    return null;
+    renderTasks();
   } else if (selectedfilter == "isDone") {
     return null;
   } else if (selectedfilter == "title") {
-    return null;
+    filterTasksByTitle();
   } else if (selectedfilter == "date") {
     return null;
   }
+}
+
+function filterTasksByTitle() {
+  tasks.sort((randomTask1, randomTask2) => {
+    const randomTask1Title = randomTask1.title.toUpperCase();
+    const randomTask2Tile = randomTask2.title.toUpperCase();
+
+    let comparisonResult = 0;
+
+    if (randomTask1Title > randomTask2Tile) {
+      comparisonResult = 1;
+    } else if (randomTask1Title < randomTask2Tile) {
+      comparisonResult = -1;
+    }
+    return comparisonResult;
+  });
+
+  renderTasks();
 }
