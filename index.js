@@ -5,9 +5,12 @@ const addTaskButton = document.getElementById("add-task-button");
 const taskTitleInput = document.getElementById("task-title-input");
 const taskList = document.getElementById("task-list");
 const taskSortSection = document.getElementById("sort-tasks");
+const sreachInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
 
 const sideMenuContainerWidth = "200px";
-const tasks = [];
+
+let tasks = [];
 
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = sideMenuContainerWidth;
@@ -26,6 +29,10 @@ addTaskButton.addEventListener("click", () => {
   });
 
   renderTasks();
+});
+
+searchButton.addEventListener("click", () => {
+  searchTitle(sreachInput.value);
 });
 
 taskSortSection.addEventListener("change", () => {
@@ -99,5 +106,10 @@ function sortTasksAtoZ() {
     return comparisonResult;
   });
 
+  renderTasks();
+}
+
+function searchTitle(text) {
+  tasks = tasks.filter((task) => task.title.includes(text));
   renderTasks();
 }
