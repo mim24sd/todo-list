@@ -58,7 +58,7 @@ td:last-child {
   align-self: center;
 }
 
-.filter-section {
+.sort-section {
   display: flex;
   justify-content: end;
   margin: var(--space-xl) 0;

@@ -4,7 +4,7 @@ const closeNavButton = document.getElementById("close-nav-button");
 const addTaskButton = document.getElementById("add-task-button");
 const taskTitleInput = document.getElementById("task-title-input");
 const taskList = document.getElementById("task-list");
-const taskSelection = document.getElementById("filter-tasks");
+const taskSortSection = document.getElementById("sort-tasks");
 
 const sideMenuContainerWidth = "200px";
 const tasks = [];
@@ -28,13 +28,11 @@ addTaskButton.addEventListener("click", () => {
   renderTasks();
 });
 
-taskSelection.addEventListener("change", () => {
-  const taskSelection = document.getElementById("filter-tasks");
-  const selectedTask = taskSelection.options[taskSelection.selectedIndex].value;
+taskSortSection.addEventListener("change", () => {
+  const sortType = taskSortSection.options[taskSortSection.selectedIndex].value;
 
-  console.log(selectedTask);
-
-  selectTasks(selectedTask);
+  sortTasks(sortType);
+  // TODO : change sortType to sort
 });
 
 function renderTasks() {
@@ -78,19 +76,15 @@ function createTaskCheckBox() {
           /> `;
 }
 
-function selectTasks(selectedfilter) {
-  if (selectedfilter == "noFilter") {
+function sortTasks(typeOfSort) {
+  if (typeOfSort == "a-to-z") {
+    sortTasksAtoZ();
+  } else {
     renderTasks();
-  } else if (selectedfilter == "isDone") {
-    return null;
-  } else if (selectedfilter == "title") {
-    filterTasksByTitle();
-  } else if (selectedfilter == "date") {
-    return null;
   }
 }
 
-function filterTasksByTitle() {
+function sortTasksAtoZ() {
   tasks.sort((randomTask1, randomTask2) => {
     const randomTask1Title = randomTask1.title.toUpperCase();
     const randomTask2Tile = randomTask2.title.toUpperCase();
