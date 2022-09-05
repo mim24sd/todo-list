@@ -7,10 +7,12 @@ const taskList = document.getElementById("task-list");
 const taskSortSection = document.getElementById("sort-tasks");
 const sreachInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
+const timeFilterSection = document.getElementById("filter-by-time-tasks");
 
 const sideMenuContainerWidth = "200px";
 
 let tasks = [];
+let allTasks = [];
 
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = sideMenuContainerWidth;
@@ -28,6 +30,8 @@ addTaskButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   });
 
+  allTasks = tasks;
+
   renderTasks();
 });
 
@@ -39,8 +43,14 @@ taskSortSection.addEventListener("change", () => {
   const sortType = taskSortSection.options[taskSortSection.selectedIndex].value;
 
   sortTasks(sortType);
-  // TODO : change sortType to sort
 });
+
+// timeFilterSection.addEventListener("change", () => {
+//   const selectedTime =
+//     timeFilterSection.options[timeFilterSection.selectedIndex].value;
+
+//   filterTasksByTime(selectedTime);
+// });
 
 function renderTasks() {
   let tasksHtml = "";
@@ -87,7 +97,7 @@ function sortTasks(typeOfSort) {
   if (typeOfSort == "a-to-z") {
     sortTasksAtoZ();
   } else {
-    renderTasks();
+    unsortTasks();
   }
 }
 
@@ -109,7 +119,58 @@ function sortTasksAtoZ() {
   renderTasks();
 }
 
-function searchTitle(text) {
-  tasks = tasks.filter((task) => task.title.includes(text));
+function unsortTasks() {
+  tasks.sort((randomTask1, randomTask2) => {
+    const randomTask1ID = randomTask1.id;
+    const randomTask2ID = randomTask2.id;
+
+    let comparisonResult = 0;
+
+    if (randomTask1ID > randomTask2ID) {
+      comparisonResult = 1;
+    } else if (randomTask1ID < randomTask2ID) {
+      comparisonResult = -1;
+    }
+    return comparisonResult;
+  });
+
   renderTasks();
 }
+
+function searchTitle(text) {
+  if (text != null || "") {
+    tasks = tasks.filter((task) => task.title.includes(text));
+    renderTasks();
+    tasks = allTasks;
+  } else {
+    renderTasks();
+  }
+}
+
+// function filterTasksByTime(time) {
+//   const peresentTime = new Date().toISOString();
+//   let filteredTasks = new Array();
+
+//   if (time == "today") {
+//     filterTodayTasks(peresentTime)
+//     tasks = filteredTasks;
+//     renderTasks();
+//   } else if (time == "today") {
+//     return null;
+//   } else if (time == "this-week") {
+//     return null;
+//   } else if (time == "this-month") {
+//     return null;
+//   }
+// }
+
+// function filterTodayTasks(text) {
+//   tasks.forEach((task) => {
+//     if () {
+//       filteredTasks.push(task);
+//     } else {
+//       filteredTasks.push(task);
+//     }
+//   });
+
+// }
