@@ -102,19 +102,16 @@ function sortTasks(typeOfSort) {
 }
 
 function sortTasksAtoZ() {
-  tasks.sort((randomTask1, randomTask2) => {
-    const randomTask1Title = randomTask1.title.toUpperCase();
-    const randomTask2Tile = randomTask2.title.toUpperCase();
-
-    let comparisonResult = 0;
-
-    if (randomTask1Title > randomTask2Tile) {
-      comparisonResult = 1;
-    } else if (randomTask1Title < randomTask2Tile) {
-      comparisonResult = -1;
-    }
-    return comparisonResult;
+  const collator = new Intl.Collator("en", {
+    numeric: true,
   });
+
+  tasks = tasks.sort((randomTask1, randomTask2) =>
+    collator.compare(
+      randomTask1.title.toUpperCase(),
+      randomTask2.title.toUpperCase()
+    )
+  );
 
   renderTasks();
 }
@@ -123,9 +120,7 @@ function unsortTasks() {
   tasks.sort((randomTask1, randomTask2) => {
     const randomTask1ID = randomTask1.id;
     const randomTask2ID = randomTask2.id;
-
     let comparisonResult = 0;
-
     if (randomTask1ID > randomTask2ID) {
       comparisonResult = 1;
     } else if (randomTask1ID < randomTask2ID) {
