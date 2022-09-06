@@ -11,7 +11,38 @@ const timeFilterSection = document.getElementById("filter-by-time-tasks");
 
 const sideMenuContainerWidth = "200px";
 
-let tasks = [];
+let tasks = [
+  {
+    id: 22333,
+    title: "lastDaaaay",
+    isDone: false,
+    createdAt: "2022-09-05T11:45:05.267Z",
+  },
+  {
+    id: 225633,
+    title: "totooooday",
+    isDone: false,
+    createdAt: "2022-09-06T11:45:05.267Z",
+  },
+  {
+    id: 2256733,
+    title: "lastWeeeeekkk",
+    isDone: false,
+    createdAt: "2022-09-01T11:45:05.267Z",
+  },
+  {
+    id: 57533,
+    title: "lastMonnni",
+    isDone: false,
+    createdAt: "2022-08-15T11:45:05.267Z",
+  },
+  {
+    id: 22433,
+    title: "day day past",
+    isDone: false,
+    createdAt: "2022-09-05T11:45:05.267Z",
+  },
+];
 let allTasks = [];
 
 openNavButton.addEventListener("click", () => {
@@ -45,12 +76,12 @@ taskSortSection.addEventListener("change", () => {
   sortTasks(sortType);
 });
 
-// timeFilterSection.addEventListener("change", () => {
-//   const selectedTime =
-//     timeFilterSection.options[timeFilterSection.selectedIndex].value;
+timeFilterSection.addEventListener("change", () => {
+  const selectedTime =
+    timeFilterSection.options[timeFilterSection.selectedIndex].value;
 
-//   filterTasksByTime(selectedTime);
-// });
+  filterTasksByTime(selectedTime);
+});
 
 function renderTasks() {
   let tasksHtml = "";
@@ -142,30 +173,87 @@ function searchTitle(text) {
   }
 }
 
-// function filterTasksByTime(time) {
-//   const peresentTime = new Date().toISOString();
-//   let filteredTasks = new Array();
+function filterTasksByTime(time) {
+  const peresentTime = new Date().toISOString();
 
-//   if (time == "today") {
-//     filterTodayTasks(peresentTime)
-//     tasks = filteredTasks;
-//     renderTasks();
-//   } else if (time == "today") {
-//     return null;
-//   } else if (time == "this-week") {
-//     return null;
-//   } else if (time == "this-month") {
-//     return null;
-//   }
-// }
+  if (time == "today") {
+    filterTodayTasks(peresentTime);
+  } else if (time == "last-day") {
+    filterLastDaysTasks(peresentTime, 1);
+  } else if (time == "last-7-days") {
+    filterLastDaysTasks(peresentTime, 7);
+  } else if (time == "last-30-days") {
+    filterLastDaysTasks(peresentTime, 30);
+  }
+}
 
-// function filterTodayTasks(text) {
-//   tasks.forEach((task) => {
-//     if () {
-//       filteredTasks.push(task);
-//     } else {
-//       filteredTasks.push(task);
-//     }
-//   });
+function filterTodayTasks(newTime) {
+  const peresentTime = newTime.substring(0, 10);
+  let filteredTasks = [];
 
-// }
+  tasks.forEach((task) => {
+    if (task.createdAt.substring(0, 10) == peresentTime) {
+      filteredTasks.push(task);
+    }
+
+    tasks = filteredTasks;
+    renderTasks();
+    tasks = allTasks;
+  });
+}
+
+function filterLastDaysTasks(newTime, numberOfDays) {
+  const peresentTimeDay = newTime.substring(8, 10);
+  const peresentTimeMonth = newTime.substring(5, 7);
+  const peresentTimeYear = newTime.substring(0, 4);
+
+  const monthsWhichTheirLastMonthHas31Days = [02, 03, 04, 05, 06, 07];
+
+  let lastDayDay = peresentTimeDay;
+  let lastDayMonth = peresentTimeMonth;
+  let lastDayYear = peresentTimeYear;
+  let lastDaysDate = "";
+  let filteredTasks = [];
+
+  for (let day = peresentTimeDay; day > peresentTimeDay - numberOfDays; day--) {
+    console.log(day);
+    if (day == 1) {
+      if (monthsWhichTheirLastMonthHas31Days.includes(peresentTimeMonth)) {
+        lastDayDay = 31;
+      } else {
+        lastDayDay = 30;
+      }
+
+      if (peresentTimeMonth == 1) {
+        lastDayMonth = 12;
+        lastDayYear = peresentTimeYear - 1;
+      } else {
+        lastDayMonth -= 1;
+        if (lastDayMonth < 10) {
+          lastDayMonth = `0${lastDayMonth}`;
+        }
+      }
+    } else {
+      lastDayDay -= 1;
+      if (lastDayDay < 10) {
+        lastDayDay = `0${lastDayDay}`;
+      }
+    }
+    tasks.forEach((task) => {
+      if (
+        task.createdAt.substring(0, 10) ==
+        `${lastDayYear}-${lastDayMonth}-${lastDayDay}`
+      ) {
+        filteredTasks.push(task);
+        console.log(
+          task.createdAt.substring(0, 10),
+          `${lastDayYear}-${lastDayMonth}-${lastDayDay}`
+        );
+      }
+
+      tasks = filteredTasks;
+      renderTasks();
+      tasks = allTasks;
+    });
+  }
+}
