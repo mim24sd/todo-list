@@ -16,31 +16,31 @@ let tasks = [
     id: 22333,
     title: "lastDaaaay",
     isDone: false,
-    createdAt: "2022-09-05T11:45:05.267Z",
+    createdAt: "2022-09-06T11:45:05.267Z",
   },
   {
     id: 225633,
     title: "totooooday",
     isDone: false,
-    createdAt: "2022-09-06T11:45:05.267Z",
+    createdAt: "2022-09-07T11:45:05.267Z",
   },
   {
     id: 2256733,
     title: "lastWeeeeekkk",
     isDone: false,
-    createdAt: "2022-09-01T11:45:05.267Z",
+    createdAt: "2022-09-02T11:45:05.267Z",
   },
   {
     id: 57533,
     title: "lastMonnni",
     isDone: false,
-    createdAt: "2022-08-15T11:45:05.267Z",
+    createdAt: "2022-08-16T11:45:05.267Z",
   },
   {
     id: 22433,
     title: "day day past",
     isDone: false,
-    createdAt: "2022-09-05T11:45:05.267Z",
+    createdAt: "2022-09-06T11:45:05.267Z",
   },
 ];
 let allTasks = [];
@@ -176,14 +176,17 @@ function searchTitle(text) {
 function filterTasksByTime(time) {
   const peresentTime = new Date().toISOString();
 
+  if (time == "no-exact-time") {
+    renderTasks();
+  }
   if (time == "today") {
     filterTodayTasks(peresentTime);
   } else if (time == "last-day") {
-    filterLastDaysTasks(peresentTime, 1);
+    filterLastDayTasks(peresentTime);
   } else if (time == "last-7-days") {
-    filterLastDaysTasks(peresentTime, 7);
+    filterLast7DaysTasks(peresentTime);
   } else if (time == "last-30-days") {
-    filterLastDaysTasks(peresentTime, 30);
+    filterLast30DaysTasks(peresentTime);
   }
 }
 
@@ -199,61 +202,110 @@ function filterTodayTasks(newTime) {
     tasks = filteredTasks;
     renderTasks();
     tasks = allTasks;
+    // is it important?
   });
 }
 
-function filterLastDaysTasks(newTime, numberOfDays) {
-  const peresentTimeDay = newTime.substring(8, 10);
-  const peresentTimeMonth = newTime.substring(5, 7);
-  const peresentTimeYear = newTime.substring(0, 4);
-
-  const monthsWhichTheirLastMonthHas31Days = [02, 03, 04, 05, 06, 07];
-
-  let lastDayDay = peresentTimeDay;
-  let lastDayMonth = peresentTimeMonth;
-  let lastDayYear = peresentTimeYear;
-  let lastDaysDate = "";
+function filterLastDayTasks(time) {
   let filteredTasks = [];
 
-  for (let day = peresentTimeDay; day > peresentTimeDay - numberOfDays; day--) {
-    console.log(day);
-    if (day == 1) {
-      if (monthsWhichTheirLastMonthHas31Days.includes(peresentTimeMonth)) {
-        lastDayDay = 31;
-      } else {
-        lastDayDay = 30;
-      }
-
-      if (peresentTimeMonth == 1) {
-        lastDayMonth = 12;
-        lastDayYear = peresentTimeYear - 1;
-      } else {
-        lastDayMonth -= 1;
-        if (lastDayMonth < 10) {
-          lastDayMonth = `0${lastDayMonth}`;
-        }
-      }
-    } else {
-      lastDayDay -= 1;
-      if (lastDayDay < 10) {
-        lastDayDay = `0${lastDayDay}`;
-      }
-    }
-    tasks.forEach((task) => {
-      if (
-        task.createdAt.substring(0, 10) ==
-        `${lastDayYear}-${lastDayMonth}-${lastDayDay}`
-      ) {
+  tasks.forEach((task) => {
+    CalculateLastDaysTasks(time, 1).forEach((date) => {
+      if (task.createdAt.substring(0, 10) == date) {
         filteredTasks.push(task);
-        console.log(
-          task.createdAt.substring(0, 10),
-          `${lastDayYear}-${lastDayMonth}-${lastDayDay}`
-        );
       }
 
       tasks = filteredTasks;
       renderTasks();
       tasks = allTasks;
     });
+  });
+}
+
+function filterLast7DaysTasks(time) {
+  const peresentTime = time.substring(0, 10);
+  let filteredTasks = [];
+
+  tasks.forEach((task) => {
+    CalculateLastDaysTasks(time, 7).forEach((date) => {
+      if (task.createdAt.substring(0, 10) == date) {
+        filteredTasks.push(task);
+      }
+    });
+
+    if (task.createdAt.substring(0, 10) == peresentTime) {
+      filteredTasks.push(task);
+    }
+
+    tasks = filteredTasks;
+    renderTasks();
+    tasks = allTasks;
+  });
+}
+
+function filterLast30DaysTasks(time) {
+  const peresentTime = time.substring(0, 10);
+  let filteredTasks = [];
+
+  tasks.forEach((task) => {
+    CalculateLastDaysTasks(time, 30).forEach((date) => {
+      if (task.createdAt.substring(0, 10) == date) {
+        filteredTasks.push(task);
+      }
+    });
+
+    if (task.createdAt.substring(0, 10) == peresentTime) {
+      filteredTasks.push(task);
+    }
+
+    tasks = filteredTasks;
+    renderTasks();
+    tasks = allTasks;
+  });
+}
+
+function CalculateLastDaysTasks(newTime, numberOfDays) {
+  const peresentTimeDay = newTime.substring(8, 10);
+  const peresentTimeMonth = newTime.substring(5, 7);
+  const peresentTimeYear = newTime.substring(0, 4);
+
+  const monthsWhichTheirLastMonthHas31Days = [02, 03, 04, 05, 06, 07];
+
+  let lastDaysDay = peresentTimeDay;
+  let lastDaysMonth = peresentTimeMonth;
+  let lastDaysYear = peresentTimeYear;
+
+  let filteredDate = [];
+
+  // 3 ta paEni ba 3 ta balaE ta ye jaE yekian okeye k joda neveshtam dg? bazi jaha az ykishun estefade shode.doroste?
+  // hes mikonm bazi jaha chon pichide shode shayad az moteghayere dorost estefade nakarde basham :(
+
+  for (let day = peresentTimeDay; day > peresentTimeDay - numberOfDays; day--) {
+    if (day == 1) {
+      if (monthsWhichTheirLastMonthHas31Days.includes(peresentTimeMonth)) {
+        lastDaysDay = 31;
+      } else {
+        lastDaysDay = 30;
+      }
+
+      if (peresentTimeMonth == 1) {
+        lastDaysMonth = 12;
+        lastDaysYear = peresentTimeYear - 1;
+      } else {
+        lastDaysMonth -= 1;
+        if (lastDaysMonth < 10) {
+          lastDaysMonth = `0${lastDaysMonth}`;
+        }
+      }
+    } else {
+      lastDaysDay -= 1;
+      if (lastDaysDay < 10) {
+        lastDaysDay = `0${lastDaysDay}`;
+      }
+    }
+
+    filteredDate.push(`${lastDaysYear}-${lastDaysMonth}-${lastDaysDay}`);
   }
+
+  return filteredDate;
 }
