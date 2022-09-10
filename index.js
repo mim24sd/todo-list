@@ -4,10 +4,10 @@ const closeNavButton = document.getElementById("close-nav-button");
 const addTaskButton = document.getElementById("add-task-button");
 const taskTitleInput = document.getElementById("task-title-input");
 const taskList = document.getElementById("task-list");
-const taskSortSection = document.getElementById("sort-tasks");
+const sortTaskDropdown = document.getElementById("sort-tasks");
 const sreachInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
-const timeFilterSection = document.getElementById("filter-by-time-tasks");
+const timeFilterDropdown = document.getElementById("filter-by-time-tasks");
 
 const sideMenuContainerWidth = "200px";
 
@@ -70,26 +70,26 @@ searchButton.addEventListener("click", () => {
   searchTitle(sreachInput.value);
 });
 
-taskSortSection.addEventListener("change", () => {
-  const sortType = taskSortSection.options[taskSortSection.selectedIndex].value;
+sortTaskDropdown.addEventListener("change", () => {
+  const sortType =
+    sortTaskDropdown.options[sortTaskDropdown.selectedIndex].value;
 
   sortTasks(sortType);
 });
 
-timeFilterSection.addEventListener("change", () => {
+timeFilterDropdown.addEventListener("change", () => {
   const selectedTime =
-    timeFilterSection.options[timeFilterSection.selectedIndex].value;
+    timeFilterDropdown.options[timeFilterDropdown.selectedIndex].value;
 
   filterTasksByTime(selectedTime);
 });
 
 function renderTasks() {
   let tasksHtml = "";
-  let countTasks = 0;
 
-  tasks.forEach((task) => {
-    countTasks += 1;
-    tasksHtml += createTaskItem(task, countTasks);
+  tasks.forEach((task, index) => {
+    index += 1;
+    tasksHtml += createTaskItem(task, index);
   });
 
   taskList.innerHTML = tasksHtml;
@@ -124,15 +124,15 @@ function createTaskCheckBox() {
           /> `;
 }
 
-function sortTasks(typeOfSort) {
-  if (typeOfSort == "a-to-z") {
-    sortTasksAtoZ();
+function sortTasks(sortType) {
+  if (sortType == "byTitle") {
+    sortTasksByTitle();
   } else {
     unsortTasks();
   }
 }
 
-function sortTasksAtoZ() {
+function sortTasksByTitle() {
   const collator = new Intl.Collator("en", {
     numeric: true,
   });
@@ -176,7 +176,7 @@ function searchTitle(text) {
 function filterTasksByTime(time) {
   const peresentTime = new Date().toISOString();
 
-  if (time == "no-exact-time") {
+  if (time == "") {
     renderTasks();
   }
   if (time == "today") {
