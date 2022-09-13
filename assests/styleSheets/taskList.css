@@ -87,3 +87,7 @@ td:last-child {
   width: 20px;
   border-width: 0;
 }
+
+.filter-by-time-section {
+  margin: var(--space-xl) 0;
+}
