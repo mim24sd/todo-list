@@ -38,6 +38,7 @@ searchButton.addEventListener("click", () => {
 
 // sortTaskDropdown.addEventListener("change", (sortType) => {
 //   sortTasks(sortType.target.value);
+
 // });
 
 timeFilterDropdown.addEventListener("change", (selectedTime) => {
@@ -119,12 +120,10 @@ function filterTasksByTime(time) {
   }
   if (time == "today") {
     renderTasks(filterTodayTasks());
-  } else if (time == "last-day") {
-    renderTasks(filterLastDayTasks());
   } else if (time == "last-7-days") {
-    renderTasks(filterLast7DaysTasks());
+    renderTasks(filterLastDaysTasks(7));
   } else if (time == "last-30-days") {
-    renderTasks(filterLast30DaysTasks());
+    renderTasks(filterLastDaysTasks(30));
   }
 }
 
@@ -142,42 +141,14 @@ function filterTodayTasks() {
   return filteredTasks;
 }
 
-function filterLastDayTasks() {
+function filterLastDaysTasks(days) {
   let filteredTasks = [];
 
   tasks.forEach((task) => {
     const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
     const today = new Date().setHours(0, 0, 0, 0);
 
-    if (taskTime == today - 1 * 24 * 60 * 60 * 1000) {
-      filteredTasks.push(task);
-    }
-  });
-  return filteredTasks;
-}
-
-function filterLast7DaysTasks() {
-  let filteredTasks = [];
-
-  tasks.forEach((task) => {
-    const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
-    const today = new Date().setHours(0, 0, 0, 0);
-
-    if (taskTime > today - 7 * 24 * 60 * 60 * 1000) {
-      filteredTasks.push(task);
-    }
-  });
-  return filteredTasks;
-}
-
-function filterLast30DaysTasks() {
-  let filteredTasks = [];
-
-  tasks.forEach((task) => {
-    const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
-    const today = new Date().setHours(0, 0, 0, 0);
-
-    if (taskTime > today - 30 * 24 * 60 * 60 * 1000) {
+    if (taskTime > today - days * 24 * 60 * 60 * 1000) {
       filteredTasks.push(task);
     }
   });
