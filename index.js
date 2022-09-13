@@ -16,19 +16,19 @@ let tasks = [
     id: 22333,
     title: "lastDaaaay",
     isDone: false,
-    createdAt: "2022-09-06T11:45:05.267Z",
+    createdAt: "2022-09-12T11:45:05.267Z",
   },
   {
     id: 225633,
-    title: "totooooday",
+    title: "last",
     isDone: false,
-    createdAt: "2022-09-07T11:45:05.267Z",
+    createdAt: "2022-09-12T11:45:05.267Z",
   },
   {
     id: 2256733,
     title: "lastWeeeeekkk",
     isDone: false,
-    createdAt: "2022-09-02T11:45:05.267Z",
+    createdAt: "2022-09-07T11:45:05.267Z",
   },
   {
     id: 57533,
@@ -38,12 +38,11 @@ let tasks = [
   },
   {
     id: 22433,
-    title: "day day past",
+    title: "2 week past",
     isDone: false,
     createdAt: "2022-09-06T11:45:05.267Z",
   },
 ];
-let allTasks = [];
 
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = sideMenuContainerWidth;
@@ -61,13 +60,11 @@ addTaskButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   });
 
-  allTasks = tasks;
-
-  renderTasks();
+  renderTasks(tasks);
 });
 
 searchButton.addEventListener("click", () => {
-  searchTitle(sreachInput.value);
+  filterTasksByTitle(sreachInput.value);
 });
 
 sortTaskDropdown.addEventListener("change", () => {
@@ -84,10 +81,10 @@ timeFilterDropdown.addEventListener("change", () => {
   filterTasksByTime(selectedTime);
 });
 
-function renderTasks() {
+function renderTasks(listOfTasks) {
   let tasksHtml = "";
 
-  tasks.forEach((task, index) => {
+  listOfTasks.forEach((task, index) => {
     index += 1;
     tasksHtml += createTaskItem(task, index);
   });
@@ -126,9 +123,9 @@ function createTaskCheckBox() {
 
 function sortTasks(sortType) {
   if (sortType == "byTitle") {
-    sortTasksByTitle();
+    renderTasks(sortTasksByTitle());
   } else {
-    unsortTasks();
+    renderTasks(unsortTasks());
   }
 }
 
@@ -137,175 +134,89 @@ function sortTasksByTitle() {
     numeric: true,
   });
 
-  tasks = tasks.sort((randomTask1, randomTask2) =>
+  return tasks.sort((randomTask1, randomTask2) =>
     collator.compare(
       randomTask1.title.toUpperCase(),
       randomTask2.title.toUpperCase()
     )
   );
-
-  renderTasks();
 }
 
 function unsortTasks() {
-  tasks.sort((randomTask1, randomTask2) => {
-    const randomTask1ID = randomTask1.id;
-    const randomTask2ID = randomTask2.id;
-    let comparisonResult = 0;
-    if (randomTask1ID > randomTask2ID) {
-      comparisonResult = 1;
-    } else if (randomTask1ID < randomTask2ID) {
-      comparisonResult = -1;
-    }
-    return comparisonResult;
-  });
-
-  renderTasks();
+  return tasks.sort((task1, task2) => (task1.id > task2.id ? 1 : -1));
 }
 
-function searchTitle(text) {
-  if (text != null || "") {
-    tasks = tasks.filter((task) => task.title.includes(text));
-    renderTasks();
-    tasks = allTasks;
-  } else {
-    renderTasks();
-  }
+function filterTasksByTitle(text) {
+  renderTasks(tasks.filter((task) => task.title.includes(text)));
 }
 
 function filterTasksByTime(time) {
-  const peresentTime = new Date().toISOString();
-
   if (time == "") {
-    renderTasks();
+    renderTasks(tasks);
   }
   if (time == "today") {
-    filterTodayTasks(peresentTime);
+    renderTasks(filterTodayTasks());
   } else if (time == "last-day") {
-    filterLastDayTasks(peresentTime);
+    renderTasks(filterLastDayTasks());
   } else if (time == "last-7-days") {
-    filterLast7DaysTasks(peresentTime);
+    renderTasks(filterLast7DaysTasks());
   } else if (time == "last-30-days") {
-    filterLast30DaysTasks(peresentTime);
+    renderTasks(filterLast30DaysTasks());
   }
 }
 
-function filterTodayTasks(newTime) {
-  const peresentTime = newTime.substring(0, 10);
+function filterTodayTasks() {
   let filteredTasks = [];
 
   tasks.forEach((task) => {
-    if (task.createdAt.substring(0, 10) == peresentTime) {
+    const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
+    const today = new Date().setHours(0, 0, 0, 0);
+
+    if (taskTime == today) {
       filteredTasks.push(task);
     }
-
-    tasks = filteredTasks;
-    renderTasks();
-    tasks = allTasks;
-    // is it important?
   });
+  return filteredTasks;
 }
 
-function filterLastDayTasks(time) {
+function filterLastDayTasks() {
   let filteredTasks = [];
 
   tasks.forEach((task) => {
-    CalculateLastDaysTasks(time, 1).forEach((date) => {
-      if (task.createdAt.substring(0, 10) == date) {
-        filteredTasks.push(task);
-      }
+    const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
+    const today = new Date().setHours(0, 0, 0, 0);
 
-      tasks = filteredTasks;
-      renderTasks();
-      tasks = allTasks;
-    });
-  });
-}
-
-function filterLast7DaysTasks(time) {
-  const peresentTime = time.substring(0, 10);
-  let filteredTasks = [];
-
-  tasks.forEach((task) => {
-    CalculateLastDaysTasks(time, 7).forEach((date) => {
-      if (task.createdAt.substring(0, 10) == date) {
-        filteredTasks.push(task);
-      }
-    });
-
-    if (task.createdAt.substring(0, 10) == peresentTime) {
+    if (taskTime == today - 1 * 24 * 60 * 60 * 1000) {
       filteredTasks.push(task);
     }
-
-    tasks = filteredTasks;
-    renderTasks();
-    tasks = allTasks;
   });
+  return filteredTasks;
 }
 
-function filterLast30DaysTasks(time) {
-  const peresentTime = time.substring(0, 10);
+function filterLast7DaysTasks() {
   let filteredTasks = [];
 
   tasks.forEach((task) => {
-    CalculateLastDaysTasks(time, 30).forEach((date) => {
-      if (task.createdAt.substring(0, 10) == date) {
-        filteredTasks.push(task);
-      }
-    });
+    const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
+    const today = new Date().setHours(0, 0, 0, 0);
 
-    if (task.createdAt.substring(0, 10) == peresentTime) {
+    if (taskTime > today - 7 * 24 * 60 * 60 * 1000) {
       filteredTasks.push(task);
     }
-
-    tasks = filteredTasks;
-    renderTasks();
-    tasks = allTasks;
   });
+  return filteredTasks;
 }
 
-function CalculateLastDaysTasks(newTime, numberOfDays) {
-  const peresentTimeDay = newTime.substring(8, 10);
-  const peresentTimeMonth = newTime.substring(5, 7);
-  const peresentTimeYear = newTime.substring(0, 4);
+function filterLast30DaysTasks() {
+  let filteredTasks = [];
 
-  const monthsWhichTheirLastMonthHas31Days = [02, 03, 04, 05, 06, 07];
+  tasks.forEach((task) => {
+    const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
+    const today = new Date().setHours(0, 0, 0, 0);
 
-  let lastDaysDay = peresentTimeDay;
-  let lastDaysMonth = peresentTimeMonth;
-  let lastDaysYear = peresentTimeYear;
-
-  let filteredDate = [];
-
-  // 3 ta paEni ba 3 ta balaE ta ye jaE yekian okeye k joda neveshtam dg? bazi jaha az ykishun estefade shode.doroste?
-  // hes mikonm bazi jaha chon pichide shode shayad az moteghayere dorost estefade nakarde basham :(
-
-  for (let day = peresentTimeDay; day > peresentTimeDay - numberOfDays; day--) {
-    if (day == 1) {
-      if (monthsWhichTheirLastMonthHas31Days.includes(peresentTimeMonth)) {
-        lastDaysDay = 31;
-      } else {
-        lastDaysDay = 30;
-      }
-
-      if (peresentTimeMonth == 1) {
-        lastDaysMonth = 12;
-        lastDaysYear = peresentTimeYear - 1;
-      } else {
-        lastDaysMonth -= 1;
-        if (lastDaysMonth < 10) {
-          lastDaysMonth = `0${lastDaysMonth}`;
-        }
-      }
-    } else {
-      lastDaysDay -= 1;
-      if (lastDaysDay < 10) {
-        lastDaysDay = `0${lastDaysDay}`;
-      }
+    if (taskTime > today - 30 * 24 * 60 * 60 * 1000) {
+      filteredTasks.push(task);
     }
-
-    filteredDate.push(`${lastDaysYear}-${lastDaysMonth}-${lastDaysDay}`);
-  }
-
-  return filteredDate;
+  });
+  return filteredTasks;
 }
