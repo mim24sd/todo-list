@@ -36,18 +36,12 @@ searchButton.addEventListener("click", () => {
   filterTasksByTitle(sreachInput.value);
 });
 
-// sortTaskDropdown.addEventListener("change", () => {
-//   const sortType =
-//     sortTaskDropdown.options[sortTaskDropdown.selectedIndex].value;
-
-//   sortTasks(sortType);
+// sortTaskDropdown.addEventListener("change", (sortType) => {
+//   sortTasks(sortType.target.value);
 // });
 
-timeFilterDropdown.addEventListener("change", () => {
-  const selectedTime =
-    timeFilterDropdown.options[timeFilterDropdown.selectedIndex].value;
-
-  filterTasksByTime(selectedTime);
+timeFilterDropdown.addEventListener("change", (selectedTime) => {
+  filterTasksByTime(selectedTime.target.value);
 });
 
 function renderTasks(listOfTasks) {
