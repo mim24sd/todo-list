@@ -11,7 +11,32 @@ const timeFilterDropdown = document.getElementById("filter-by-time-tasks");
 
 const sideMenuContainerWidth = "200px";
 
-let tasks = [];
+let tasks = [
+  {
+    createdAt: "2022-09-14T09:42:14.504Z",
+    id: 1,
+    isDone: false,
+    title: "ttodayyyy",
+  },
+  {
+    createdAt: "2022-09-13T09:42:14.504Z",
+    id: 1,
+    isDone: false,
+    title: "last Day",
+  },
+  {
+    createdAt: "2022-09-09T09:42:14.504Z",
+    id: 1,
+    isDone: false,
+    title: "last weeeeeky",
+  },
+  {
+    createdAt: "2022-08-17T09:42:14.504Z",
+    id: 1,
+    isDone: false,
+    title: "last Moni",
+  },
+];
 
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = sideMenuContainerWidth;
@@ -115,26 +140,26 @@ function filterTasksByTitle(text) {
 }
 
 function filterTasksByTime(time) {
-  if (time == "") {
-    renderTasks(tasks);
-  }
-  if (time == "today") {
-    renderTasks(filterTodayTasks());
-  } else if (time == "last-7-days") {
-    renderTasks(filterLastDaysTasks(7));
-  } else if (time == "last-30-days") {
-    renderTasks(filterLastDaysTasks(30));
+  switch (time) {
+    case "today":
+      renderTasks(filterTodayTasks());
+      break;
+    case "last-7-days":
+      renderTasks(filterLastDaysTasks(7));
+      break;
+    case "last-30-days":
+      renderTasks(filterLastDaysTasks(30));
+      break;
+    default:
+      renderTasks(tasks);
   }
 }
 
 function filterTodayTasks() {
   let filteredTasks = [];
 
-  tasks.forEach((task) => {
-    const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
-    const today = new Date().setHours(0, 0, 0, 0);
-
-    if (taskTime == today) {
+  tasks.map((task) => {
+    if (new Date(task.createdAt) > new Date().setHours(0, 0, 0, 0)) {
       filteredTasks.push(task);
     }
   });
@@ -144,11 +169,8 @@ function filterTodayTasks() {
 function filterLastDaysTasks(days) {
   let filteredTasks = [];
 
-  tasks.forEach((task) => {
-    const taskTime = new Date(task.createdAt).setHours(0, 0, 0, 0);
-    const today = new Date().setHours(0, 0, 0, 0);
-
-    if (taskTime > today - days * 24 * 60 * 60 * 1000) {
+  tasks.map((task) => {
+    if (new Date(task.createdAt) > new Date() - days * 24 * 60 * 60 * 1000) {
       filteredTasks.push(task);
     }
   });
