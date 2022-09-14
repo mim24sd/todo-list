@@ -11,7 +11,32 @@ const timeFilterDropdown = document.getElementById("filter-by-time-tasks");
 
 const sideMenuContainerWidth = "200px";
 
-let tasks = [];
+let tasks = [
+  {
+    createdAt: "2022-09-14T16:02:19.079Z",
+    id: 1,
+    isDone: false,
+    title: "today",
+  },
+  {
+    createdAt: "2022-09-13T16:02:19.079Z",
+    id: 1,
+    isDone: false,
+    title: "last day",
+  },
+  {
+    createdAt: "2022-09-09T16:02:19.079Z",
+    id: 1,
+    isDone: false,
+    title: "last week",
+  },
+  {
+    createdAt: "2022-08-30T16:02:19.079Z",
+    id: 1,
+    isDone: false,
+    title: "last month",
+  },
+];
 
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = sideMenuContainerWidth;
@@ -28,7 +53,7 @@ addTaskButton.addEventListener("click", () => {
     isDone: false,
     createdAt: new Date().toISOString(),
   });
-
+  console.log(tasks);
   renderTasks(tasks);
 });
 
@@ -131,23 +156,19 @@ function filterTasksByTime(time) {
 }
 
 function filterTodayTasks() {
-  let filteredTasks = [];
-
-  tasks.map((task) => {
+  return tasks.reduce((filteredTasks, task) => {
     if (new Date(task.createdAt) > new Date().setHours(0, 0, 0, 0)) {
       filteredTasks.push(task);
     }
-  });
-  return filteredTasks;
+    return filteredTasks;
+  }, []);
 }
 
 function filterLastDaysTasks(days) {
-  let filteredTasks = [];
-
-  tasks.map((task) => {
+  return tasks.reduce((filteredTasks, task) => {
     if (new Date(task.createdAt) > new Date() - days * 24 * 60 * 60 * 1000) {
-      filteredTasks.push(task);
+      filteredTasks = [...filteredTasks, task];
     }
-  });
-  return filteredTasks;
+    return filteredTasks;
+  }, []);
 }
