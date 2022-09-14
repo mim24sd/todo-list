@@ -58,6 +58,36 @@ td:last-child {
   align-self: center;
 }
 
-.table-box-check-box {
-  width: 40%;
+.sort-section {
+  display: flex;
+  margin: var(--space-xl) 0;
+}
+
+.search-section {
+  display: flex;
+  margin: var(--space-xl) 0;
+  width: min-content;
+}
+
+.search-input {
+  border-radius: var(--space-md);
+  border-width: 0;
+  padding: var(--space-sm) var(--space-sm);
+  background-color: var(--backgroundColor);
+  box-shadow: var(--hoverPrimaryShadowColor);
+  font-family: var(--primaryFont);
+}
+
+.search-button {
+  background-color: unset;
+  border-width: 0;
+}
+.search-icon {
+  display: flex;
+  width: 20px;
+  border-width: 0;
+}
+
+.filter-by-time-section {
+  margin: var(--space-xl) 0;
 }
