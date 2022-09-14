@@ -11,32 +11,7 @@ const timeFilterDropdown = document.getElementById("filter-by-time-tasks");
 
 const sideMenuContainerWidth = "200px";
 
-let tasks = [
-  {
-    createdAt: "2022-09-14T09:42:14.504Z",
-    id: 1,
-    isDone: false,
-    title: "ttodayyyy",
-  },
-  {
-    createdAt: "2022-09-13T09:42:14.504Z",
-    id: 1,
-    isDone: false,
-    title: "last Day",
-  },
-  {
-    createdAt: "2022-09-09T09:42:14.504Z",
-    id: 1,
-    isDone: false,
-    title: "last weeeeeky",
-  },
-  {
-    createdAt: "2022-08-17T09:42:14.504Z",
-    id: 1,
-    isDone: false,
-    title: "last Moni",
-  },
-];
+let tasks = [];
 
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = sideMenuContainerWidth;
