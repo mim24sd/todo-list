@@ -10,32 +10,7 @@ const timeFilterDropdown = document.getElementById("filter-by-time-tasks");
 
 const sideMenuContainerWidth = "200px";
 
-let tasks = [
-  {
-    createdAt: "2022-09-14T16:02:19.079Z",
-    id: 1,
-    isDone: false,
-    title: "today",
-  },
-  {
-    createdAt: "2022-09-13T16:02:19.079Z",
-    id: 1,
-    isDone: false,
-    title: "last day",
-  },
-  {
-    createdAt: "2022-09-09T16:02:19.079Z",
-    id: 1,
-    isDone: false,
-    title: "last week",
-  },
-  {
-    createdAt: "2022-08-30T16:02:19.079Z",
-    id: 1,
-    isDone: false,
-    title: "last month",
-  },
-];
+let tasks = [];
 
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = sideMenuContainerWidth;
@@ -46,14 +21,23 @@ closeNavButton.addEventListener("click", () => {
 });
 
 addTaskButton.addEventListener("click", () => {
-  tasks.push({
-    id: tasks.length + 1,
-    title: taskTitleInput.value,
-    isDone: false,
-    createdAt: new Date().toISOString(),
-  });
-  console.log(tasks);
-  renderTasks(tasks);
+  if (Number(taskTitleInput.value) == 0) {
+    alert("Task title input can not be empty!");
+  } else {
+    console.log;
+    if (taskTitleInput.value.replace(/\s/g, "").length < 3) {
+      alert("Task title is too short!");
+    } else {
+      tasks.push({
+        id: tasks.length + 1,
+        title: taskTitleInput.value,
+        isDone: false,
+        createdAt: new Date().toISOString(),
+      });
+
+      renderTasks(tasks);
+    }
+  }
 });
 
 searchButton.addEventListener("click", () => {

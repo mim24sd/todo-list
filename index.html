@@ -86,7 +86,12 @@
             <h2 class="section-title" id="add-task-header">Add New Task</h2>
             <form action="/action_page.php">
               <label class="label" for="title">Title:</label>
-              <input class="input-text" id="task-title-input" type="text" />
+              <input
+                class="input-text"
+                id="task-title-input"
+                type="text"
+                required
+              />
               <label class="label">Category:</label>
               <div class="category-row-box">
                 <button type="button" class="category-health">
@@ -132,9 +137,8 @@
                 name="submit-button"
                 type="button"
                 id="add-task-button"
-              >
-                Save
-              </button>
+              /> Save
+            </button>
               <button class="delete-button" name="delete-button" type="button">
                 Delete
               </button>
