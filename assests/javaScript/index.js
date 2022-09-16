@@ -3,6 +3,7 @@ const openNavButton = document.getElementById("open-nav-button");
 const closeNavButton = document.getElementById("close-nav-button");
 const addTaskButton = document.getElementById("add-task-button");
 const taskTitleInput = document.getElementById("task-title-input");
+const titleError = document.getElementById("title-error");
 const taskList = document.getElementById("task-list");
 const sreachInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
@@ -21,16 +22,19 @@ closeNavButton.addEventListener("click", () => {
 });
 
 addTaskButton.addEventListener("click", () => {
-  if (Number(taskTitleInput.value) == 0) {
-    alert("Task title input can not be empty!");
+  taskTitle = taskTitleInput.value.trim();
+
+  if (Number(taskTitle) === 0) {
+    taskTitleInput.style = "border:solid; border-color:var(--error)";
+    titleError.innerHTML = "Task title can not be empty!";
   } else {
-    console.log;
-    if (taskTitleInput.value.replace(/\s/g, "").length < 3) {
-      alert("Task title is too short!");
+    if (taskTitle.length < 3) {
+      taskTitleInput.style = "border:solid; border-color:var(--error)";
+      titleError.innerHTML = "Task title is too short!";
     } else {
       tasks.push({
         id: tasks.length + 1,
-        title: taskTitleInput.value,
+        title: taskTitle,
         isDone: false,
         createdAt: new Date().toISOString(),
       });
