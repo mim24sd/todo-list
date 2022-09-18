@@ -22,25 +22,24 @@ closeNavButton.addEventListener("click", () => {
 });
 
 addTaskButton.addEventListener("click", () => {
-  taskTitle = taskTitleInput.value.trim();
+  const taskTitle = taskTitleInput.value.trim();
 
-  if (Number(taskTitle) === 0) {
-    taskTitleInput.style = "border:solid; border-color:var(--error)";
+  if (taskTitle === "") {
     titleError.innerHTML = "Task title can not be empty!";
+    titleError.classList.add("title-error");
+  } else if (taskTitle.length < 3) {
+    titleError.innerHTML = "Task title is too short!";
+    titleError.classList.add("title-error");
   } else {
-    if (taskTitle.length < 3) {
-      taskTitleInput.style = "border:solid; border-color:var(--error)";
-      titleError.innerHTML = "Task title is too short!";
-    } else {
-      tasks.push({
-        id: tasks.length + 1,
-        title: taskTitle,
-        isDone: false,
-        createdAt: new Date().toISOString(),
-      });
+    titleError.innerHTML = "";
+    tasks.push({
+      id: tasks.length + 1,
+      title: taskTitle,
+      isDone: false,
+      createdAt: new Date().toISOString(),
+    });
 
-      renderTasks(tasks);
-    }
+    renderTasks(tasks);
   }
 });
 
