@@ -32,6 +32,7 @@ addTaskButton.addEventListener("click", () => {
     titleError.classList.add("title-error");
   } else {
     titleError.innerHTML = "";
+
     tasks.push({
       id: tasks.length + 1,
       title: taskTitle,
