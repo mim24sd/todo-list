@@ -3,40 +3,15 @@ const openNavButton = document.getElementById("open-nav-button");
 const closeNavButton = document.getElementById("close-nav-button");
 const addTaskButton = document.getElementById("add-task-button");
 const taskTitleInput = document.getElementById("task-title-input");
+const titleError = document.getElementById("title-error");
 const taskList = document.getElementById("task-list");
-// const sortTaskDropdown = document.getElementById("sort-tasks");
 const sreachInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const timeFilterDropdown = document.getElementById("filter-by-time-tasks");
 
 const sideMenuContainerWidth = "200px";
 
-let tasks = [
-  {
-    createdAt: "2022-09-14T16:02:19.079Z",
-    id: 1,
-    isDone: false,
-    title: "today",
-  },
-  {
-    createdAt: "2022-09-13T16:02:19.079Z",
-    id: 1,
-    isDone: false,
-    title: "last day",
-  },
-  {
-    createdAt: "2022-09-09T16:02:19.079Z",
-    id: 1,
-    isDone: false,
-    title: "last week",
-  },
-  {
-    createdAt: "2022-08-30T16:02:19.079Z",
-    id: 1,
-    isDone: false,
-    title: "last month",
-  },
-];
+let tasks = [];
 
 openNavButton.addEventListener("click", () => {
   sideMenuContainer.style.width = sideMenuContainerWidth;
@@ -47,24 +22,32 @@ closeNavButton.addEventListener("click", () => {
 });
 
 addTaskButton.addEventListener("click", () => {
-  tasks.push({
-    id: tasks.length + 1,
-    title: taskTitleInput.value,
-    isDone: false,
-    createdAt: new Date().toISOString(),
-  });
-  console.log(tasks);
-  renderTasks(tasks);
+  const taskTitle = taskTitleInput.value.trim();
+
+  if (taskTitle === "") {
+    titleError.innerHTML = "Task title can not be empty!";
+    titleError.classList.add("title-error");
+  } else if (taskTitle.length < 3) {
+    titleError.innerHTML = "Task title is too short!";
+    titleError.classList.add("title-error");
+  } else {
+    titleError.innerHTML = "";
+    titleError.classList.remove("title-error");
+
+    tasks.push({
+      id: tasks.length + 1,
+      title: taskTitle,
+      isDone: false,
+      createdAt: new Date().toISOString(),
+    });
+
+    renderTasks(tasks);
+  }
 });
 
 searchButton.addEventListener("click", () => {
   filterTasksByTitle(sreachInput.value);
 });
-
-// sortTaskDropdown.addEventListener("change", (sortType) => {
-//   sortTasks(sortType.target.value);
-
-// });
 
 timeFilterDropdown.addEventListener("change", (selectedTime) => {
   filterTasksByTime(selectedTime.target.value);
@@ -109,31 +92,6 @@ function createTaskCheckBox() {
             name="checkbox-done"
           /> `;
 }
-
-// function sortTasks(sortType) {
-//   if (sortType == "byTitle") {
-//     renderTasks(sortTasksByTitle());
-//   } else {
-//     renderTasks(unsortTasks());
-//   }
-// }
-
-// function sortTasksByTitle() {
-//   const collator = new Intl.Collator("en", {
-//     numeric: true,
-//   });
-
-//   return tasks.sort((randomTask1, randomTask2) =>
-//     collator.compare(
-//       randomTask1.title.toUpperCase(),
-//       randomTask2.title.toUpperCase()
-//     )
-//   );
-// }
-
-// function unsortTasks() {
-//   return tasks.sort((task1, task2) => (task1.id > task2.id ? 1 : -1));
-// }
 
 function filterTasksByTitle(text) {
   renderTasks(tasks.filter((task) => task.title.includes(text)));

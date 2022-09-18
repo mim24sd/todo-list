@@ -25,6 +25,12 @@ form {
   box-shadow: var(--focusPrimaryShadowColor);
 }
 
+.title-error {
+  font-family: var(--primaryFont);
+  color: var(--error);
+  margin-top: var(--space-sm);
+}
+
 .input-time {
   font-family: var(--primaryFont);
   font-size: var(--space-md);

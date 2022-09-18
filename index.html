@@ -86,7 +86,13 @@
             <h2 class="section-title" id="add-task-header">Add New Task</h2>
             <form action="/action_page.php">
               <label class="label" for="title">Title:</label>
-              <input class="input-text" id="task-title-input" type="text" />
+              <input
+                class="input-text"
+                id="task-title-input"
+                type="text"
+                required
+              />
+              <small id="title-error"></small>
               <label class="label">Category:</label>
               <div class="category-row-box">
                 <button type="button" class="category-health">
@@ -132,9 +138,8 @@
                 name="submit-button"
                 type="button"
                 id="add-task-button"
-              >
-                Save
-              </button>
+              /> Save
+            </button>
               <button class="delete-button" name="delete-button" type="button">
                 Delete
               </button>
@@ -143,13 +148,6 @@
         </section>
         <section class="task-list">
           <h2 class="section-title">My Task List</h2>
-          <!-- <div class="sort-section">
-            <label for="sort-tasks">Sort tasks by :&nbsp; </label>
-            <select name="sort-tasks" id="sort-tasks">
-              <option value="not-sorted">Not sorted</option>
-              <option value="byTitle">By Title</option>
-            </select>
-          </div> -->
           <div class="filter-by-time-section">
             <label for="filter-by-time-tasks">Filter tasks by :&nbsp; </label>
             <select name="filter-by-time-tasks" id="filter-by-time-tasks">
@@ -191,6 +189,6 @@
         </section>
       </div>
     </div>
-    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="./assests/javaScript/index.js"></script>
   </body>
 </html>
