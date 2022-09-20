@@ -6,7 +6,6 @@ const taskTitleInput = document.getElementById("task-title-input");
 const titleError = document.getElementById("title-error");
 const taskList = document.getElementById("task-list");
 const sreachInput = document.getElementById("search-input");
-const searchButton = document.getElementById("search-button");
 const timeFilterDropdown = document.getElementById("filter-by-time-tasks");
 const isDoneFilterDropdown = document.getElementById("filter-by-is-done-tasks");
 
@@ -46,8 +45,10 @@ addTaskButton.addEventListener("click", () => {
   }
 });
 
-searchButton.addEventListener("click", () => {
-  filterTasksByTitle(sreachInput.value);
+sreachInput.addEventListener("keypress", function (button) {
+  if (button.key === "Enter") {
+    filterTasksByTitle(sreachInput.value);
+  }
 });
 
 timeFilterDropdown.addEventListener("change", (selectedTime) => {
