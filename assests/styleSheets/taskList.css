@@ -91,3 +91,19 @@ td:last-child {
 .filter-by-time-section {
   margin: var(--space-xl) 0;
 }
+
+.checked-table-box-row {
+  border-radius: var(--space-sm);
+  box-shadow: var(--primaryShadowColor);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 65% 30% 5%;
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--lightGray);
+  color: var(--gray);
+}
+
+.check-box {
+  background-color: black;
+}
