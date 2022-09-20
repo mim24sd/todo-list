@@ -42,6 +42,8 @@ addTaskButton.addEventListener("click", () => {
     });
 
     renderTasks(tasks);
+
+    taskTitleInput.value = "";
   }
 });
 
