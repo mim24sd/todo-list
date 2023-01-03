@@ -6,8 +6,8 @@ const taskTitleInput = document.getElementById("task-title-input");
 const titleError = document.getElementById("title-error");
 const taskList = document.getElementById("task-list");
 const sreachInput = document.getElementById("search-input");
-const searchButton = document.getElementById("search-button");
 const timeFilterDropdown = document.getElementById("filter-by-time-tasks");
+const isDoneFilterDropdown = document.getElementById("filter-by-is-done-tasks");
 
 const sideMenuContainerWidth = "200px";
 
@@ -42,15 +42,23 @@ addTaskButton.addEventListener("click", () => {
     });
 
     renderTasks(tasks);
+
+    taskTitleInput.value = "";
   }
 });
 
-searchButton.addEventListener("click", () => {
-  filterTasksByTitle(sreachInput.value);
+sreachInput.addEventListener("keypress", function (button) {
+  if (button.key === "Enter") {
+    filterTasksByTitle(sreachInput.value);
+  }
 });
 
 timeFilterDropdown.addEventListener("change", (selectedTime) => {
   filterTasksByTime(selectedTime.target.value);
+});
+
+isDoneFilterDropdown.addEventListener("change", (selectedItem) => {
+  filterTasksByIsDone(selectedItem.target.value);
 });
 
 function renderTasks(listOfTasks) {
@@ -62,10 +70,14 @@ function renderTasks(listOfTasks) {
   });
 
   taskList.innerHTML = tasksHtml;
+
+  addCheckBoxEvent();
 }
 
 function createTaskItem(task, numberOfTask) {
-  return `<li class="table-box-row" id=task-${numberOfTask}>
+  let liClassName = task.isDone ? "checked-table-box-row" : "table-box-row";
+
+  return `<li class=${liClassName} id=task-${numberOfTask}>
             ${createTaskTitle(task.title)}
             ${createTaskCreatedAt(task.createdAt)}
             ${createTaskCheckBox(task.isDone)}
@@ -86,11 +98,13 @@ function createTaskCreatedAt(taskCreatedAt) {
           </time>`;
 }
 
-function createTaskCheckBox() {
+function createTaskCheckBox(isDone) {
   return `<input
-            type="checkbox"
-            name="checkbox-done"
-          /> `;
+    type="checkbox"
+    name="checkbox"
+    class="check-box"
+    ${handelCheckBox(isDone)}
+  /> `;
 }
 
 function filterTasksByTitle(text) {
@@ -129,4 +143,42 @@ function filterLastDaysTasks(days) {
     }
     return filteredTasks;
   }, []);
+}
+
+function handelCheckBox(isDone) {
+  return isDone === true ? "checked = true" : "";
+}
+
+function addCheckBoxEvent() {
+  const checkboxs = document.getElementsByClassName("check-box");
+  const checkboxesArray = Array.from(checkboxs);
+
+  tasks.forEach((task, indexOfTask) => {
+    checkboxesArray.forEach((checkbox, indexOfCheckbox) => {
+      if (indexOfTask == indexOfCheckbox) {
+        checkbox.addEventListener("change", function () {
+          if (this.checked) {
+            checkbox.parentElement.classList.remove("table-box-row");
+            checkbox.parentElement.classList.add("checked-table-box-row");
+
+            task.isDone = true;
+          } else {
+            checkbox.parentElement.classList.remove("checked-table-box-row");
+            checkbox.parentElement.classList.add("table-box-row");
+
+            task.isDone = false;
+          }
+        });
+      }
+    });
+  });
+}
+
+function filterTasksByIsDone(selectedItem) {
+  let tasksForRender =
+    selectedItem === "done"
+      ? tasks.filter((task) => task.isDone === true)
+      : tasks;
+
+  renderTasks(tasksForRender);
 }
